@@ -8,6 +8,7 @@
 
     <!----- framework tailwind ----->
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
     <!----- fontawesome ----->
     <script src="https://kit.fontawesome.com/a935639c09.js" crossorigin="anonymous"></script>
@@ -29,13 +30,58 @@
 <body>
 
     <!----- Navbar ----->
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: white;">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"> <img class="img_nav w-40" style="margin-top: -20px;" src="/BSAD//img/logo.jpg" alt=""></a>
+              </div>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" style="color: black;">SHOP</a></li>
+                <!-- <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> </a></li> ปุ่ม LOGOUT เท่ดี  -->
+                <form class="navbar-form navbar-left" action="/action_page.php">
+                    <div class="form-group">
+                      <div class="form-group has-feedback">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                    </div>
+                  </form>
 
-    <div class="navbar flex flex-row justify-center text-center items-center border-b border-black">
-        <a href style="margin-right: 600px;"><img class="img_nav w-40" src="/img/logo.jpg"></a>
-        <a href class="shop_nav text-2xl" style="margin-right: 20px;">SHOP</a>
+                <li><a href="#"><img class="img_nav w-12" src="/BSAD/img/th.jpg" alt=""></a></li>
+                <li><a href="#"><img class="img_nav w-9" src="/BSAD/img/user_icon.png" alt=""></a></li>
+              </ul>
+        </div>
+      </nav>
+      
+      <!-- --login-- -->
+   
+        <div class="containner" style="border: 1px solid black; margin-top: 10%; width: 30%; height: 50%; align-items: center;">
+            <div class="form">
+                <form action="/action_page.php">
+                    <div class="form-group">
+                      <label for="email">Email address:</label>
+                      <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="form-group">
+                      <label for="pwd">Password:</label>
+                      <input type="password" class="form-control" id="pwd">
+                    </div>
+                    <div class="checkbox">
+                      <label><input type="checkbox"> Remember me</label>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                  </form> 
+            </div>
+        </div>
+ 
+      
+
+    <!-- <div class="navbar flex flex-row justify-center text-center items-center">
+        <a href><img class="img_nav w-40" src="/img/logo.jpg"></a>
+        <a href class="shop_nav" style="margin-right: 20px;">SHOP</a> -->
 
         <!----- Search ----->
-        <div class="search_nav mx-5 border border-solid border-black py-0.5 rounded-full">
+        <!-- <div class="search_nav mx-5 border border-solid border-black py-0.5 rounded-full">
             <form>
                 <input type="text" style="border: transparent;" placeholder="Search">
                 <button style="border: transparent;"><i class="fa-solid fa-magnifying-glass fa-2x"
@@ -44,8 +90,11 @@
         </div>
 
         <a href style="margin-right: 20px;"><i class="fa-solid fa-cart-shopping fa-2x" style="color: #343434;"></i></a>
-        <a href style="margin-right: 20px;"><i class="fa-regular fa-user fa-2x" style="color: #343434;"></i></a>
-    </div>
+        <a href style="margin-right: 20px;">USER</a>
+    </div> -->
+
+    <!--login-->
+
 </body>
 <!-- สู้ๆคับ -->
 
