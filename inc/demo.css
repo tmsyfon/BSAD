@@ -1,0 +1,9 @@
+input[type=text].form-control {
+	border: 1px solid #8EA1B6;
+	border-radius: 0px;
+}
+
+#first_example {
+	margin: 50px auto;
+	max-width: 350px;
+}
