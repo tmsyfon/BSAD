@@ -25,55 +25,53 @@
 
     <div class="container" style="margin-top: 25px;">
         <h1>REGISTER</h1>
-        <form>
-            <div class="form-group">
+        <form method="post" action="save_register.php">
+            <div class="form-group" name="username">
                 <label>Username</label><br>
                 <input class="form-control" placeholder="Username">
             </div>
-            <div class="form-group">
+            <div class="form-group" name="password">
                 <label>Password</label><br>
                 <input class="form-control" placeholder="Password">
             </div>
-            <div class="form-group">
+            <div class="form-group" name="firstname">
                 <label>Firstname</label><br>
                 <input class="form-control" placeholder="Firstname">
             </div>
-            <div class="form-group">
+            <div class="form-group" name="lastname">
                 <label>Lastname</label><br>
                 <input class="form-control" placeholder="lastaname">
             </div>
-            <div class="form-group">
+            <div class="form-group" name="phone">
                 <label>Phone</label><br>
                 <input class="form-control" placeholder="Phone">
             </div>
-        </form>
-        <h1>ADDRESS</h1>
-        <form>
-            <div class="form-group">
+            <h1>ADDRESS</h1>
+            <div class="form-group" name="house">
                 <label>House No. / Village</label><br>
                 <input class="form-control">
             </div>
             <div class="row">
-                <div class="col-12">
+                <div class="col-12" name="province">
                     <label class="control-label">Province</label>
                     <select class="form-control" placeholder="Province" name="province" id="province">
                         <option value="">Choose</option>
                     </select>
                 </div>
-                <div class="col-12">
+                <div class="col-12" name="district">
                     <label class="control-label">District</label>
                     <select class="form-control" placeholder="District" name="district" id="district">
                         <option value="">Choose</option>
                     </select>
                 </div>
-                <div class="col-12">
+                <div class="col-12" name="subdistrict">
                     <label class="control-label">Subdistrict</label>
                     <select class="form-control" placeholder="Subdistrict" name="subdistrict" id="subdistrict">
                         <option value="">Choose</option>
                     </select>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" name="postal">
                 <label>Postal Code</label><br>
                 <input class="form-control">
             </div>
