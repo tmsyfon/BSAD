@@ -25,11 +25,11 @@ $sql = " INSERT INTO regis_user
 	VALUES
 	('$id', '$Username', '$Password', '$Firstname', '$Lastname', '$Phone', '$House', '$Province', '$District', '$Subdistrict', '$Postalcode')";
 
-$result = mysqli_query($con, $sql) or die("Error in query: $sql " . mysqli_error($con));
+$result = mysqli_query($connect, $sql) or die("Error in query: $sql " . mysqli_error($connect));
 
 
 //ปิดการเชื่อมต่อ database
-mysqli_close($con);
+mysqli_close($connect);
 
 
 
