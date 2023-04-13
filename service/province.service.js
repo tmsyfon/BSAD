@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#province').empty().append('<option value="">เลือก</option>');
+  $('#province').empty().append('<option value="">Choose</option>');
   $.ajax({
       dataType: "json",
       type: 'POST',
@@ -30,9 +30,9 @@ $(document).ready(function() {
 });
 
 function callDistrict(proVinceId, selector) {
-    $('#district').empty().append('<option value="">เลือก</option>');
+    $('#district').empty().append('<option value="">Choose</option>');
     if($('#subdistrict').length > 0){
-        $('#subdistrict').empty().append('<option value="">เลือก</option>');
+        $('#subdistrict').empty().append('<option value="">Choose</option>');
     }
 
   $.ajax({
@@ -53,7 +53,7 @@ function callDistrict(proVinceId, selector) {
 }
 
 function callSubDistrict(disTrictId, selector ){
-  $('#subdistrict').empty().append('<option value="">เลือก</option>');
+  $('#subdistrict').empty().append('<option value="">Choose</option>');
 
   $.ajax({
       dataType: "json",
