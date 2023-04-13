@@ -6,7 +6,7 @@ t1.name_th
 FROM subdistrict AS t1
 WHERE SUBSTR(t1.`code`,1,4) = '".substr($_POST['id'],0,4)."'
 ORDER BY CONVERT (t1.name_th USING tis620) ASC";
-$result = mysqli_query($connect, $sql);
+$result = mysqli_query($conn, $sql);
 ?>
 <?php
 $cnt = 0;

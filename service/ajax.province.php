@@ -6,7 +6,7 @@ t1.name_th
 FROM
 province AS t1
 ORDER BY CONVERT (t1.name_th USING tis620) ASC";
-$result = mysqli_query($connect, $sql);
+$result = mysqli_query($conn, $sql);
 $cnt = 0;
 foreach ($result as $index => $value) :
     $arr[$cnt]['code'] = $value['code'];

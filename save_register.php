@@ -11,11 +11,11 @@ $house = $_POST['house'];
 $province = $_POST['province'];
 $district = $_POST['district'];
 $subdistrict = $_POST['subdistrict'];
-$postalcode = $_POST['postalcode'];
+$postal = $_POST['postal'];
 
 // สร้างคำสั่ง SQL สำหรับบันทึกข้อมูล
 $sql = "INSERT INTO regis_user (username, password, firstname, lastname, phone, house, province, district, subdistrict, postalcode)
-        VALUES ('$username', '$password', '$firstname', '$lastname', '$phone', '$house', '$postalcode')";
+        VALUES ('$username', '$password', '$firstname', '$lastname', '$phone', '$house', '$province', '$district', '$subdistrict', '$postal')";
 
 // ส่งคำสั่ง SQL เพื่อบันทึกข้อมูล
 if (mysqli_query($conn, $sql)) {
