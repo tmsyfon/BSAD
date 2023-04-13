@@ -1,52 +1,29 @@
 <?php
-echo "<pre>";
-print_r($_POST);
-echo "</pre>";
-?>
+require "inc/connect.php";
 
-<?php include('../BSAD/inc/connect.php');
+// รับค่าจากฟอร์ม
+$username = $_POST['username'];
+$password = $_POST['password'];
+$firstname = $_POST['firstname'];
+$lastname = $_POST['lastname'];
+$phone = $_POST['phone'];
+$house = $_POST['house'];
+$province = $_POST['province'];
+$district = $_POST['district'];
+$subdistrict = $_POST['subdistrict'];
+$postalcode = $_POST['postalcode'];
 
-//สร้างตัวแปร
-$id = $_POST['id'];
-$Username = $_POST['Username'];
-$Password = $_POST['Password'];
-$Firstname = $_POST['Firstname'];
-$Lastname = $_POST['Lastname'];
-$Phone = $_POST['Phone'];
-$House = $_POST['House'];
-$Province = $_POST['Province'];
-$District = $_POST['District'];
-$Subdistrict = $_POST['Subdistrict'];
-$Postalcode = $_POST['Postalcode'];
+// สร้างคำสั่ง SQL สำหรับบันทึกข้อมูล
+$sql = "INSERT INTO regis_user (username, password, firstname, lastname, phone, house, province, district, subdistrict, postalcode)
+        VALUES ('$username', '$password', '$firstname', '$lastname', '$phone', '$house', '$postalcode')";
 
-//เพิ่มข้อมูล
-$sql = " INSERT INTO regis_user
-	(id, Username, Password, Firstname, Lastname, Phone, House, Province, District, Subdistrict, Postalcode)
-	VALUES
-	('$id', '$Username', '$Password', '$Firstname', '$Lastname', '$Phone', '$House', '$Province', '$District', '$Subdistrict', '$Postalcode')";
-
-$result = mysqli_query($connect, $sql) or die("Error in query: $sql " . mysqli_error($connect));
-
-
-//ปิดการเชื่อมต่อ database
-mysqli_close($connect);
-
-
-
-
-//ถ้าสำเร็จให้ขึ้นอะไร
-if ($result) {
-    echo "<script type='text/javascript'>";
-    echo "alert('Register Success');";
-    echo "window.location = 'home1.html';";
-    echo "</script>";
+// ส่งคำสั่ง SQL เพื่อบันทึกข้อมูล
+if (mysqli_query($conn, $sql)) {
+    echo "New record created successfully";
 } else {
-    //กำหนดเงื่อนไขว่าถ้าไม่สำเร็จให้ขึ้นข้อความและกลับไปหน้าเพิ่ม
-    echo "<script type='text/javascript'>";
-    echo "alert('error!');";
-    echo "window.location = 'indexhtml; ";
-    echo "</script>";
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
 
-
+// ปิดการเชื่อมต่อฐานข้อมูล
+mysqli_close($conn);
 ?>
