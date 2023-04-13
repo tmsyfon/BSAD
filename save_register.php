@@ -4,7 +4,7 @@ print_r($_POST);
 echo "</pre>";
 ?>
 
-<?php require 'inc/connection.php';
+<?php include('../BSAD/inc/connect.php');
 
 //สร้างตัวแปร
 $id = $_POST['id'];
