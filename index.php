@@ -3,8 +3,7 @@
 <head>
     <meta http-equiv=Content-Type content="text/html; charset=utf-8">
     <link rel="stylesheet" href="./inc/demo.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
@@ -75,6 +74,7 @@
                 <label>Postal Code</label><br>
                 <input class="form-control">
             </div>
+            <button type="submit" class="btn btn-dark">Register</button>
         </form>
     </div>
 </body>
