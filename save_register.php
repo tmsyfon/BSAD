@@ -4,7 +4,7 @@ print_r($_POST);
 echo "</pre>";
 ?>
 
-<?php include('connect.php');
+<?php require 'inc/connection.php';
 
 //สร้างตัวแปร
 $id = $_POST['id'];
