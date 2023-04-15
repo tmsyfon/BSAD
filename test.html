@@ -26,7 +26,7 @@
     }
   </style>
 
-  <title>LOGIN</title>
+  <title>TEST</title>
   
 </head>
 <!----Navbar---->
@@ -51,38 +51,55 @@
         </form>
 
         <li><a href="#"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #343434; margin-top: 50%;"></i></a></li> <!--ไอคอนตะกร้า--->
-        <li><a href="#"><i class="fa-regular fa-user fa-xl" style="color: #343434; margin-top: 60%;" ></i></a></li>
+
+        <div class="dropdown">
+            <a href="#"><i class="fa-regular fa-user fa-xl dropdown-toggle" style="color: #343434; margin-top: 60%;" ></i></a>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">HTML</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">CSS</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">JavaScript</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">About Us</a></li>
+              </ul>
+        </div>
+        
       </ul>
     </div>
   </nav>
 
-  <!-- --login-- -->
-  <div class="modal-dialog" style="margin-top: 10%;">
-      <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="text-center">LOGIN</h1>
-          </div>
-          <div class="modal-body">
-              <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control input-lg" placeholder="Username"/>
-              </div><br>
-
-              <div class="input-group">
-                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                  <input type="password" class="form-control input-lg" placeholder="Password"/>
-              </div><br>
-
-              <div class="form-group">
-                  <button type="submit" class="btn btn-primary btn-block">LOGIN</button>
-              </div>
-            
-                </form>
-              </ul>
-          </div>
+  <!-- --test-- -->
+  <div class="card-deck">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
       </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
   </div>
-</body>
 
 <!-------Footer------>
 <footer style="background-color: #848383; width: 100%; left: 0; bottom: 0; position: fixed;"> 
