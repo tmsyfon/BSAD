@@ -1,300 +1,84 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <title>Register</title>
   <!----- framework tailwind ----->
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!----- Bootstrap ----->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
-  <!----- fontawesome ----->
-  <script src="https://kit.fontawesome.com/a935639c09.js" crossorigin="anonymous"></script>
-
-  <!----- Kanit Font ----->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
-
-  <style>
-    * {
-      font-family: 'Kanit', sans-serif;
-    }
-  </style>
-  <title>สมัครสมาชิก</title>
+  <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 </head>
-<!---สมัครสมาชิก---->
-
-<body>
-  <!----- Navbar ----->
-  <nav class="navbar navbar-inverse navbar-fixed-top h-28" style="background-color: white;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#"> <img class="img_nav w-40" style="margin-top: -20px;" src="/img/logo.jpg"
-            alt=""></a> <!--Logo-->
+<body class="flex flex-col justify-center items-center content-center">
+  <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
+    <div class="grid grid-cols-2 w-full">
+      <div class="pl-5">
+        <img class="w-32 m-3" src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png" alt="">
       </div>
-      <ul class="nav navbar-nav navbar-right pt-4">
-        <li><a href="#" style="color: black;">SHOP</a></li>
-
-        <form class="navbar-form navbar-left" action="/action_page.php">
-          <div class="form-group">
-            <div class="form-group has-feedback">
-              <input type="text" class="form-control" placeholder="Search">
-              <span class="glyphicon glyphicon-search form-control-feedback"></span>
-            </div>
-          </div>
-        </form>
-
-        <li><a href="#"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #343434; margin-top: 50%;"></i></a>
-        </li> <!--ไอคอนตะกร้า--->
-        <li><a href="#"><i class="fa-regular fa-user fa-xl" style="color: #343434; margin-top: 60%;"></i></a></li>
-      </ul>
+      <div class="flex flex-row justify-end items-end content-end pr-10">
+        <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
+        <div class="relative">
+          <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search" type="text">
+          <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
+        </div>
+        <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
+        <i class="fa-regular fa-user text-2xl my-6 ml-3 mr-12"></i>
+      </div>
     </div>
   </nav>
 
-  <!-- --login-- -->
-  <div class="container mt-40 ">
+  <div class="container py-10">
+    <div class="">
+      <div class="border-2 border-solid bg-white border-black z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="height: 500px; width: 900px;">
+        <d iv class="flex flex-col justify-center items-center content-center">
+          <p class="text-5xl m-8">REGISTER</p>
+          <div class="w-full grid grid-cols-2">
 
-    <div class=" modal-content">
-      <div class="modal-header">
-        <h1 class="text-center">สมัครสมาชิก</h1>
-      </div>
-      <table class="table table-striped">
-        <tbody>
-          <tr>
-            <td colspan="1" class="">
-              <form class="well form-horizontal">
-                <fieldset>
-                  <!--Usename-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">Usename</label>
-                    <div class="col-md-8 inputGroupContainer">
-                      <div class="input-group"><span class="input-group-addon"><i
-                            class="glyphicon glyphicon-user"></i></span><input id="fullName" name="fullName"
-                          placeholder="Usename" class="form-control" required="true" value="" type="text"></div>
-                    </div>
-                  </div>
-                  <!--Firstname-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">Firstname</label>
-                    <div class="col-md-8 inputGroupContainer">
-                      <div class="input-group"><span class="input-group-addon"><i
-                            class="glyphicon glyphicon-user"></i></span><input id="fullName" name="fullName"
-                          placeholder="Firstname" class="form-control" required="true" value="" type="text"></div>
-                    </div>
-                  </div>
-                  <!--lastname-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">Lastname</label>
-                    <div class="col-md-8 inputGroupContainer">
-                      <div class="input-group"><span class="input-group-addon"><i
-                            class="glyphicon glyphicon-user"></i></span><input id="fullName" name="fullName"
-                          placeholder="Lastname" class="form-control" required="true" value="" type="text"></div>
+            <form class="flex flex-col justify-center items-center content-center border-solid border-r-2 border-black">
+              <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" placeholder="Username" type="text">
+              <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" placeholder="First name" type="text">
+              <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" placeholder="Last name" type="text">
+              <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" placeholder="Phone" type="text">
+              <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" placeholder="Password" type="text">
+            </form>
+
+            <div class="flex flex-col justify-center items-center content-center p-4">
+              <div class="w-full h-full border-2 border-solid border-black grid grid-rows-6 h-full p-4">
+
+                  <textarea class="row-span-3 border-2 border-solid border-black mb-3 p-2" placeholder="Adress" name="" id=""></textarea>
+                  <div class="row-span-3">
+                    <div class="grid grid-cols-2 w-full">
+
+                      <div class="flex flex-col justify-center items-center content-center py-1 mr-1">
+                        <select class="border-2 border-solid border-black w-full mb-5 h-10" name="" id="">
+                          <option>SELECT</option>
+                        </select>
+                        <select class="border-2 border-solid border-black w-full h-10" name="" id="">
+                          <option>SELECT</option>
+                        </select>
+                      </div>
+                      <div class="flex flex-col justify-center items-center content-center py-1 ml-1">
+                        <select class="border-2 border-solid border-black w-full mb-5 h-10" name="" id="">
+                          <option>SELECT</option>
+                        </select>
+                        <input class="h-10 border-2 border-solid border-black w-full p-2" placeholder="Post ID" type="text" name="" id="">
+                      </div>
+
                     </div>
                   </div>
 
-                  <!--Phone-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">Phone number</label>
-                    <div class="col-md-8 inputGroupContainer">
-                      <div class="input-group"><span class="input-group-addon"><i
-                            class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" name="phoneNumber"
-                          placeholder="Phone Number" class="form-control" required="true" value="" type="tel"></div>
-                    </div>
-                  </div>
-                </fieldset>
-              </form>
-              <!--รหัส-->
-              <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control input-lg" placeholder="Password" />
-              </div><br>
-
-              <div class="form-group">
-                <button type="submit" class="btn btn-primary btn-block">สมัครสมาชิก</button>
               </div>
-            </td>
+            </div>
 
-            <!-------------------------------------------------->
-            <td colspan="1">
-              <form class="well form-horizontal">
-                <fieldset>
-                  <!--ชื่อ-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">Full Name</label>
-                    <div class="col-md-8 inputGroupContainer">
-                      <div class="input-group"><span class="input-group-addon"><i
-                            class="glyphicon glyphicon-user"></i></span><input id="fullName" name="fullName"
-                          placeholder="Full Name" class="form-control" required="true" value="" type="text"></div>
-                    </div>
-                  </div>
-                  <!--นามสกุล-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">Last Name</label>
-                    <div class="col-md-8 inputGroupContainer">
-                      <div class="input-group"><span class="input-group-addon"><i
-                            class="glyphicon glyphicon-user"></i></span><input id="fullName" name="fullName"
-                          placeholder="Full Name" class="form-control" required="true" value="" type="text"></div>
-                    </div>
-                  </div>
-                  <!--ที่อยู่-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">City</label>
-                    <div class="col-md-8 inputGroupContainer">
-                      <div class="input-group"><span class="input-group-addon"><i
-                            class="glyphicon glyphicon-home"></i></span><input id="city" name="city" placeholder="City"
-                          class="form-control" required="true" value="" type="text"></div>
-                    </div>
-                  </div>
-                  <!--โทรศัพท์-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">Phone Number</label>
-                    <div class="col-md-8 inputGroupContainer">
-                      <div class="input-group"><span class="input-group-addon"><i
-                            class="glyphicon glyphicon-earphone"></i></span><input id="phoneNumber" name="phoneNumber"
-                          placeholder="Phone Number" class="form-control" required="true" value="" type="tel"></div>
-                    </div>
-                  </div>
-                  <!--ประเทศ-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">Country</label>
-                    <div class="col-md-8 inputGroupContainer">
-                      <div class="input-group">
-                        <span class="input-group-addon" style="max-width: 100%;"><i
-                            class="glyphicon glyphicon-list"></i></span>
-                        <select class="selectpicker form-control">
-                          <option>A really long option to push the menu over the edget</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <!--จังหวัด-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">Country</label>
-                    <div class="col-md-8 inputGroupContainer">
-                      <div class="input-group">
-                        <span class="input-group-addon" style="max-width: 100%;"><i
-                            class="glyphicon glyphicon-list"></i></span>
-                        <select class="selectpicker form-control">
-                          <option>A really long option to push the menu over the edget</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <!--เขต-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">Country</label>
-                    <div class="col-md-8 inputGroupContainer">
-                      <div class="input-group">
-                        <span class="input-group-addon" style="max-width: 100%;"><i
-                            class="glyphicon glyphicon-list"></i></span>
-                        <select class="selectpicker form-control">
-                          <option>A really long option to push the menu over the edget</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <!--ตำบล-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">Country</label>
-                    <div class="col-md-8 inputGroupContainer">
-                      <div class="input-group">
-                        <span class="input-group-addon" style="max-width: 100%;"><i
-                            class="glyphicon glyphicon-list"></i></span>
-                        <select class="selectpicker form-control">
-                          <option>A really long option to push the menu over the edget</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-                  <!--รหัสไปรษณีย์-->
-                  <div class="form-group">
-                    <label class="col-md-4 control-label">Postal Code/ZIP</label>
-                    <div class="col-md-8 inputGroupContainer">
-                      <div class="input-group"><span class="input-group-addon"><i
-                            class="glyphicon glyphicon-home"></i></span><input id="postcode" name="postcode"
-                          placeholder="Postal Code/ZIP" class="form-control" required="true" value="" type="text"></div>
-                    </div>
-                  </div>
-                </fieldset>
-              </form>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div><br><br>
-
-  <!-------Footer------>
-  <footer style="background-color: #848383; width: 100%;">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <ul class="adress">
-            <span>Adress</span>
-            <li>
-              <p>Lorem ipsum dolor sit amet, vero omnis vocibus</p>
-            </li>
-
-            <li>
-              <p>+90 1234 56789</p>
-            </li>
-
-            <li>
-              <p>info@gmail.com</p>
-            </li>
-          </ul>
-        </div>
-
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <ul class="contact">
-            <span>Contact</span>
-            <li>
-              <a href="#">Home</a>
-            </li>
-
-            <li>
-              <a href="#">About</a>
-            </li>
-
-            <li>
-              <a href="#">Blog</a>
-            </li>
-
-            <li>
-              <a href="#">Gallery </a>
-            </li>
-
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-
-
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-          <ul class="social">
-            <span>Social</span>
-            <li>
-              <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-            </li>
-
-            <li>
-              <a href="#"><i class="fa fa-github fa-2x"></i></a>
-            </li>
-
-            <li>
-              <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
-            </li>
-          </ul>
+          </div>
+          <button class="bg-black text-white px-7 py-3 mt-4 rounded-xl">Submit</button>
         </div>
       </div>
+      <div class="border-2 border-solid border-black z-0 mt-5 ml-5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="height: 500px; width: 900px;">
+      </div>
     </div>
-  </footer>
-
-</html>
+    
+  </div>
 </body>
+</html>
