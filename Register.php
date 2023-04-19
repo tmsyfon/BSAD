@@ -58,15 +58,19 @@
       <div class="border-2 border-solid bg-white border-black z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="height: 500px; width: 900px;">
         <d iv class="flex flex-col justify-center items-center content-center">
           <p class="text-5xl m-8">REGISTER</p>
+          <form class="flex flex-col justify-center items-center content-center" method="post" action="save_register.php">
           <div class="w-full grid grid-cols-2">
 
-            <form class="flex flex-col justify-center items-center content-center border-solid border-r-2 border-black" method="post" action="save_register.php">
-              <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="username" placeholder="Username" type="text">
-              <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="firstname" placeholder="First name" type="text">
-              <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="lastname" placeholder="Last name" type="text">
-              <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="phone" placeholder="Phone" type="text">
-              <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="password" placeholder="Password" type="text">
-            </form>
+            
+              <div class="flex flex-col justify-center items-center content-center border-solid border-r-2 border-black">
+                <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="username" placeholder="Username" type="text">
+                <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="firstname" placeholder="First name" type="text">
+                <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="lastname" placeholder="Last name" type="text">
+                <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="phone" placeholder="Phone" type="text">
+                <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="password" placeholder="Password" type="text">
+              </div>
+              
+            
 
             <div class="flex flex-col justify-center items-center content-center p-4">
               <div class="w-full h-full border-2 border-solid border-black grid grid-rows-6 h-full p-4">
@@ -98,6 +102,7 @@
 
           </div>
           <button class="bg-black text-white px-7 py-3 mt-4 rounded-xl" type="submit">Register</button>
+          </form>
       </div>
     </div>
     <div class="border-2 border-solid border-black z-0 mt-5 ml-5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="height: 500px; width: 900px;">
