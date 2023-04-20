@@ -8,6 +8,8 @@
 
   <!----- framework tailwind ----->
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 
   <!----- Bootstrap ----->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -20,79 +22,79 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      font-family: 'Kanit', sans-serif;
-    }
-  </style>
-
   <title>Add Product</title>
-  
-    <!----- Navbar ----->
-    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: white;">
-        <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#"> <img class="img_nav w-40" style="margin-top: -20px;" src="/img/logo.jpg" 
-                alt=""></a> <!--Logo-->
-          </div>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><i class="fa-regular fa-user fa-xl" style="color: #343434; margin-top: 60%;" ></i></a></li>
-          </ul>
-        </div>
-      </nav>
-
-<!-------------->
-
-<!-- --Add Product-- -->
-<div class="modal-dialog" style="margin-top: 10%;">
-    <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="text-center">เพิ่มข้อมูล สินค้า</h1>
-        </div>
-        <div class="modal-body">
-            <form>
-                <div class="form-group">
-                  <label for="name">ชื่อสินค้า :</label>
-                  <input type="text" class="form-control" id="exampleInputName"  placeholder="Enter Product Name">
-
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">ราคา:</label>
-                  <input type="text" class="form-control" id="exampleInputprice" placeholder="Price">
-                </div>
-
-                <div class="form-group">
-                    <label for="exampleFormControlFile1">ภาพที่ 1:</label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                  </div>
-
-                <div class="form-group">
-                    <label for="exampleFormControlFile1">ภาพที่ 2: </label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                </div>
-                <button type="submit" class="btn btn-primary">Upload</button>
-                
-  
-                <div class="form-group">
-                    <button class="btn btn-primary px-3 me-2" onclick="this.parentNode.querySelector('input[type=number]').stepDown()"><i class="fas fa-minus"></i></button>
-                    <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" style="width: 100px;"/>
-                    <button class="btn btn-primary px-3 ms-2" onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i class="fas fa-plus"></i></button>
-                
-                </div>
-
-                
-                    
-          
-  
-                
-                <button type="submit" class="btn btn-primary">ADD</button>
-              </form>
-        </div>
-    </div>
-</div>
-</body>
-
-    
-
-
 </head>
+
+<style>
+  * {
+    font-family: 'Kanit', sans-serif;
+  }
+</style>
+
+<body class="flex flex-col justify-center items-center content-center">
+  <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
+    <div class="grid grid-cols-2 w-full">
+      <div class="pl-5">
+        <img class="w-32 m-3" src="img/logo.png" alt="">
+      </div>
+      <div class="flex flex-row justify-end items-end content-end pr-10">
+        <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
+        <div class="relative">
+          <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search"
+            type="text">
+          <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
+        </div>
+        <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
+        <i class="fa-regular fa-user text-2xl my-6 ml-3 mr-12"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-------------->
+
+  <!-- --Add Product-- -->
+  <div class="modal-dialog" style="margin-top: 10%;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="text-center">เพิ่มข้อมูล สินค้า</h1>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="form-group">
+            <label for="name">ชื่อสินค้า :</label>
+            <input type="text" class="form-control" id="exampleInputName" placeholder="Enter Product Name">
+
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">ราคา:</label>
+            <input type="text" class="form-control" id="exampleInputprice" placeholder="Price">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlFile1">ภาพที่ 1:</label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+
+          <div class="form-group">
+            <label for="exampleFormControlFile1">ภาพที่ 2: </label>
+            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+          </div>
+          <button type="submit" class="btn btn-primary">Upload</button>
+
+
+          <div class="form-group">
+            <button class="btn btn-primary px-3 me-2"
+              onclick="this.parentNode.querySelector('input[type=number]').stepDown()"><i
+                class="fas fa-minus"></i></button>
+            <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control"
+              style="width: 100px;" />
+            <button class="btn btn-primary px-3 ms-2"
+              onclick="this.parentNode.querySelector('input[type=number]').stepUp()"><i
+                class="fas fa-plus"></i></button>
+          </div>
+          <button type="submit" class="btn btn-primary">ADD</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
