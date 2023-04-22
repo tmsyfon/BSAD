@@ -9,9 +9,6 @@
   <!----- framework tailwind ----->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!----- Bootstrap ----->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
   <!----- fontawesome ----->
   <script src="https://kit.fontawesome.com/a935639c09.js" crossorigin="anonymous"></script>
 
@@ -24,301 +21,51 @@
     * {
       font-family: 'Kanit', sans-serif;
     }
-    
-    .gradient-custom {
-    background: white ;
-    }
-    
-
   </style>
 
   <title>Shopping cart</title>
-  
+
 </head>
 
-<body>
-  <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: white;">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#"> <img class="img_nav w-40" style="margin-top: -20px;" src="/img/logo.jpg" 
-            alt=""></a> <!--Logo-->
+<body class="flex flex-col justify-center items-center content-center">
+  <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
+    <div class="grid grid-cols-2 w-full">
+      <div class="pl-5">
+        <img class="w-32 m-3" src="img/logo.png" alt="">
       </div>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#" style="color: black;">SHOP</a></li>
-
-        <form class="navbar-form navbar-left" action="/action_page.php">
-          <div class="form-group">
-            <div class="form-group has-feedback">
-              <input type="text" class="form-control" placeholder="Search">
-              <span class="glyphicon glyphicon-search form-control-feedback"></span>
-            </div>
-          </div>
-        </form>
-
-        <li><a href="#"><i class="fa-solid fa-cart-shopping fa-xl" style="color: #343434; margin-top: 50%;"></i></a></li> <!--ไอคอนตะกร้า--->
-        <li><a href="#"><i class="fa-regular fa-user fa-xl" style="color: #343434; margin-top: 60%;" ></i></a></li>
-      </ul>
+      <div class="flex flex-row justify-end items-end content-end pr-10">
+        <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
+        <div class="relative">
+          <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search"
+            type="text">
+          <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
+        </div>
+        <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
+        <i class="fa-regular fa-user text-2xl my-6 ml-3 mr-12"></i>
+      </div>
     </div>
   </nav>
 
-  <!-- --Shopping cart-- -->
-  <section class="h-90 gradient-custom" style="margin-top: 4%;">
-    <div class="container py-5">
-      <div class="row d-flex justify-content-center my-4">
-        <div class="col-md-8">
-          <div class="card mb-4">
-            <div class="card-header py-3">
-              <h5 class="mb-0">Cart - 2 items</h5>
-            </div>
-            <div class="card-body" style="background-color:#dadada">
-              <!-- Single item -->
-              <div class="row">
-                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                  <!-- Image -->
-                  <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="ligh" style="margin-left: 10%; margin-top: 5%;">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/12a.webp"
-                      class="w-100" alt="Blue Jeans Jacket" />
-                    <a href="#!">
-                      <div class="mask"></div>
-                    </a>
-                  </div>
-                  <!-- Image -->
-                </div>
-  
-                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0" style="margin-top: 1%;">
-                  <!-- Data -->
-                  <p><strong>Blue denim shirt</strong></p>
-                  <p>Color: blue</p>
-                  <p>Size: M</p>
-                  <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                    title="Remove item">
-                    <i class="fas fa-trash"></i>
-                  </button>
-                  <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
-                    title="Move to the wish list">
-                    <i class="fas fa-heart"></i>
-                  </button>
-                  <!-- Data -->
-                </div>
-  
-                <div class="col-lg-4 col-md-6 mb-4 mb-lg-4">
-                  <!-- Quantity -->
-                  <div class="d-flex mb-4" style="max-width: 200px">
-                    <button class="btn btn-primary px-3 me-2"
-                      onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                      <i class="fas fa-minus"></i>
-                    </button>
-  
-                    <div class="form-outline">
-                      <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
-                      <label class="form-label" for="form1">Quantity</label>
-                    </div>
-  
-                    <button class="btn btn-primary px-3 ms-2"
-                      onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                  <!-- Quantity -->
-  
-                  <!-- Price -->
-                  <p class="text-start text-md-center">
-                    <strong>$17.99</strong>
-                  </p>
-                  <!-- Price -->
-                </div>
-              </div>
-              <!-- Single item -->
-  
-              <hr class="my-4" />
-  
-              <!-- Single item -->
-              <div class="row">
-                <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
-                  <!-- Image -->
-                  <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light" style="margin-left: 10%;">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Vertical/13a.webp"
-                      class="w-100" />
-                    <a href="#!">
-                      <div class="mask"></div>
-                    </a>
-                  </div>
-                  <!-- Image -->
-                </div>
-  
-                <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
-                  <!-- Data -->
-                  <p><strong>Red hoodie</strong></p>
-                  <p>Color: red</p>
-                  <p>Size: M</p>
-  
-                  <button type="button" class="btn btn-primary btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
-                    title="Remove item">
-                    <i class="fas fa-trash"></i>
-                  </button>
-                  <button type="button" class="btn btn-danger btn-sm mb-2" data-mdb-toggle="tooltip"
-                    title="Move to the wish list">
-                    <i class="fas fa-heart"></i>
-                  </button>
-                  <!-- Data -->
-                </div>
-  
-                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                  <!-- Quantity -->
-                  <div class="d-flex mb-4" style="max-width: 300px">
-                    <button class="btn btn-primary px-3 me-2"
-                      onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-                      <i class="fas fa-minus"></i>
-                    </button>
-  
-                    <div class="form-outline">
-                      <input id="form1" min="0" name="quantity" value="1" type="number" class="form-control" />
-                      <label class="form-label" for="form1">Quantity</label>
-                    </div>
-  
-                    <button class="btn btn-primary px-3 ms-2"
-                      onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-                      <i class="fas fa-plus"></i>
-                    </button>
-                  </div>
-                  <!-- Quantity -->
-  
-                  <!-- Price -->
-                  <p class="text-start text-md-center">
-                    <strong>$17.99</strong>
-                  </p>
-                  <!-- Price -->
-                </div>
-              </div>
-              <!-- Single item -->
-            </div>
-          </div>
-          <div class="card mb-4">
-            <div class="card-body">
-              <p><strong>Expected shipping delivery</strong></p>
-              <p class="mb-0">12.10.2020 - 14.10.2020</p>
-            </div>
-          </div>
-          <div class="card mb-4 mb-lg-0">
-            <div class="card-body">
-              <p><strong>We accept</strong></p>
-              <img class="me-2" width="45px"
-                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/visa.svg"
-                alt="Visa" />
-              <img class="me-2" width="45px"
-                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/amex.svg"
-                alt="American Express" />
-              <img class="me-2" width="45px"
-                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce-gateway-stripe/assets/images/mastercard.svg"
-                alt="Mastercard" />
-              <img class="me-2" width="45px"
-                src="https://mdbcdn.b-cdn.net/wp-content/plugins/woocommerce/includes/gateways/paypal/assets/images/paypal.webp"
-                alt="PayPal acceptance mark" />
-            </div>
-          </div>
+  <!------------>
+
+  <div class="container py-10 grid grid-cols-5">
+
+    <div class="col-span-3 bg-gray-200 p-4">
+      <p class="text-2xl">Cart</p>
+      <div class="grid-rows-2">
+        <div>
+
         </div>
-        <div class="col-md-4" style="background-color: #dadada; border-radius: 3%; margin-top: 2%;" >
-          <div class="card mb-4">
-            <div class="card-header py-3">
-              <h5 class="mb-0">Summary</h5>
-            </div>
-            <div class="card-body">
-              <ul class="list-group list-group-flush" >
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0" style="background-color: #dadada;">
-                  Products
-                  <span>$53.98</span>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center px-0"style="background-color: #dadada;">
-                  Shipping
-                  <span>Gratis</span>
-                </li>
-                <li
-                  class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3" style="background-color: #dadada;">
-                  <div>
-                    <strong>Total amount</strong>
-                    <strong>
-                      <p class="mb-0">(including VAT)</p>
-                    </strong>
-                  </div>
-                  <span><strong>$53.98</strong></span>
-                </li>
-              </ul>
-  
-              <button type="button" class="btn btn-primary btn-lg btn-block">
-                Go to checkout
-              </button>
-            </div>
-          </div>
+        <div>
+
         </div>
       </div>
     </div>
-  </section>
 
-<!-------Footer------>
-<footer style="background-color: #848383; width: 100%; left: 0; bottom: 0; position: fixed;"> 
-  <div class="container-fluid">
-     <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <ul class="adress">
-                   <span>Adress</span>    
-                   <li>
-                      <p>Lorem ipsum dolor sit amet, vero omnis vocibus</p>
-                    </li>
-                         
-                    <li>
-                      <p>+90 1234 56789</p>
-                    </li>
-                         
-                    <li>
-                      <p>info@gmail.com</p>
-                    </li>
-               </ul>
-          </div>
-          
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-              <ul class="contact">
-                   <span>Contact</span>    
-                   <li>
-                      <a href="#">Home</a>
-                    </li>
-                         
-                    <li>
-                       <a href="#">About</a>
-                    </li>
-                         
-                    <li>
-                      <a href="#">Blog</a>
-                    </li>
-                         
-                    <li>
-                       <a href="#">Gallery </a>
-                    </li>
-                         
-                    <li>
-                      <a href="#">Contact</a>
-                   </li>
-              </ul>
-          </div>
-          
-     
-          <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-             <ul class="social">
-                <span>Social</span>    
-                 <li>
-                      <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
-                 </li>
-                
-                 <li>
-                      <a href="#"><i class="fa fa-github fa-2x"></i></a>
-                 </li>
-                  
-                 <li>
-                      <a href="#"><i class="fa fa-google-plus fa-2x"></i></a>
-                </li>
-              </ul>
-         </div>
-     </div> 
+    <div class="col-span-2">
+    </div>
+
   </div>
-</footer>
+</body>
+
 </html>
