@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product</title>
+
+  <!----- framework tailwind ----->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
+
+  <!----- Bootstrap ----->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+
+<body class="flex flex-col justify-center items-center content-center">
+  <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
+    <div class="grid grid-cols-6 w-full">
+      <div style="margin-left: 10%;">
+        <img class="w-100% mt-2 pt-1" src="img/logo.png" alt="" style="height: 60px; margin-left: 2%; width: 70%;">
+      </div>
+
+      <div class="flex flex-col justify-end items-end content-end" style="margin-left: 490%;">
+        <i class="fa-regular fa-user text-5xl m-6 mt-10"></i>
+      </div>
+
+    </div>
+
+  </nav>
+
+  <!-- --Add Product-- -->
+  <div class="" style="margin-top: 5%; border: 2px solid rgb(223, 222, 222); border-radius: 6px;">
+    <div class="modal-content"><br>
+      <h1 class="text-center" style="margin-top: 10px; font-size: 2.5rem;">เพิ่มข้อมูลสินค้า</h1><br>
+      <div class="border-solid border-b-2 border-solid" style="width: 60%; margin-left: 20%;"></div>
+      <div class="modal-body">
+
+        <form>
+          <!-----ชื่อสินค้า------>
+          <div class="form-group">
+            <label for="name">ชื่อสินค้า :</label>
+            <input type="text" class="form-control" id="exampleInputName" placeholder="Enter Product Name">
+
+          </div>
+          <!-----ราคา-------->
+          <div class="form-group">
+            <label for="exampleInputPassword1">ราคา:</label>
+            <input type="text" class="form-control" id="exampleInputprice" placeholder="Price"><br>
+          </div>
+
+          <!----ปุ่มเลือกไซต์------>
+          <div class="grid grid-cols-8 justify-center items-center content-center">
+
+            <label for="name">SIZE :</label>
+            <button class="bg-black text-black rounded-xl" type="button "
+              style="width:90%; height: 100%; background-color:rgb(203, 203, 203)" width:90%; height: 100%;>S</button>
+            <button class="bg-black text-black rounded-xl" type="button"
+              style="width:90%; height: 100%; background-color:rgb(203, 203, 203)" width:90%; height: 100%;>M</button>
+            <button class="bg-black text-black rounded-xl" type="button"
+              style="width:90%; height: 100%; background-color:rgb(203, 203, 203)" width:90%; height: 100%;>L</button>
+            <button class="bg-black text-black rounded-xl" type="button"
+              style="width:90%; height: 100%; background-color:rgb(203, 203, 203)" width:90%; height: 100%;>XL</button>
+            <button class="bg-black text-black rounded-xl" type="button"
+              style="width:90%; height: 100%; background-color:rgb(203, 203, 203)" width:90%; height: 100%;>XXL</button>
+          </div><br>
+
+          <!----จำนวนสินค้า------>
+          <div class="form-group">
+            <label for="">จำนวน</label>
+            <div class="form-control" style="width: 15%; display: flex;">
+              <button type="button">+</button>
+              <input type="text" value="1" style="position: absolute; left: 9%; width: 10px;">
+              <!-- <h3 style="position: absolute; left: 8%;">1</h3> -->
+              <button style="position: absolute; left: 13.9%; top: 34%;" type="button">-</button>
+            </div>
+          </div>
+
+          <!----กล่องรายละเอียด------>
+          <div>
+            <label for="name">รายละเอียดสินค้า :</label>
+            <textarea name="" id="" cols="80" rows="10" class="form-control"></textarea>
+          </div><br>
+
+          <!----เลือกรูปภาพ----->
+          <div>
+            <div class="form-group" style="display: flex;">
+              <label for="exampleFormControlFile1">ภาพที่ 1 :</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1" style="margin-left: 2%;">
+            </div>
+
+            <div class="form-group" style="display: flex;">
+              <label for="exampleFormControlFile1">ภาพที่ 2 :</label>
+              <input type="file" class="form-control-file" id="exampleFormControlFile1" style="margin-left: 2%;">
+            </div>
+
+            <button class=" text-white px-3 py-1  rounded-xl"
+              style="width: 10%;  background-color:grey; ">ADD</button><br>
+          </div>
+
+
+          <!----ปุ่ม---->
+          <button class=" text-white px-7 py-3 mt-8 rounded-xl"
+            style="width: 30%; margin-left: 69%; background-color:grey; height: 60%;">ADD</button><br>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
