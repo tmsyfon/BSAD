@@ -1,115 +1,380 @@
-<!DOCTYPE html>
-<html lang="en">
+<HTML>
+  <?php
+  // ตรวจสอบว่ามี session หรือยัง
+  session_start();
+  if(isset($_SESSION['user_id'])) {
+    $user_id = $_SESSION['user_id'];
+    // ใช้ $user_id ได้ทุกหน้า
+  } else {
+    // ถ้าไม่มี session ให้ redirect ไปหน้า Login
+    header("Location: login.php");
+    exit();
+  }
+  ?>
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./inc/demo.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  <style>
+  /* แทรก CSS code ที่คัดลอกมา */
+  @import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-  <!----- font kanit ----->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
-
-  <title>Register</title>
-
-  <!----- java ----->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-  <script src="service/province.service.js" type="text/javascript"></script>
-
-  <!----- framework tailwind ----->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
-
-  <!----- icon ----->
-  <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
-</head>
-
-<style>
-  * {
+  /* กำหนด Font สำหรับส่วนต่าง ๆ ของเว็บไซต์ */
+  body {
     font-family: 'Kanit', sans-serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+  }
+  /* กำหนด Font สำหรับฟอร์ม */
+  form label, form input, form button {
+    font-family: 'Kanit', sans-serif;
+    font-weight: normal;
+  }
+   .container {
+     /* width:33.33%;
+      position: fixed;
+      top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%); */
+   width: 30%;
+
+     margin: auto;
+     border: 1px solid #ccc;
+     border-radius: 10px; /* เพิ่มความฟุ้งของเส้นขอบ */
+     padding: 20px;
+   }
+
+
+  #drop-area img {
+    display: none;
+  }
+
+  #drop-area {
+  width: 50%;
+  height: 2em; /* ขนาด Textbox ปกติ */
+  border: 2px dashed gray;
+  overflow: hidden; /* ไม่ให้ภาพที่แทรกรูปเกินขนาดของ Drop Area */
+  margin-bottom: 10px; /* เพิ่มช่องว่างด้านล่าง Drop Area */
+}
+
+
+
+
+ </style>
+
+</head>
+<div style=" height: 100px; display: flex; justify-content: center; align-items: center;">
+  <img src="image/logo.png" alt="logo" style="height: 80px;">
+</div>
+<div style="text-align:center; margin-bottom:30px;">
+  <h2>เพิ่มข้อมูลรูปพรรณ</h2>
+</div>
+<div class="container" style="margin-bottom:150px; margin-top:50px;">
+<form action="upload2.php" method="post" enctype="multipart/form-data">
+  <div class="form-group">
+  <label for="text">ชื่อ:</label>
+  <input type="text" class="form-control" id="text" name="text"><br><br>
+</div>
+  <div class="form-group">
+  <label for="text2">เบอร์โทรศัพท์:</label>
+  <input type="text" class="form-control" id="text2" name="text2"><br><br>
+</div>
+<div class="form-group">
+<label for="text2">เพศ:</label>
+<select class="form-control" id="text3" name="text3">
+  <option value="ชาย">ชาย</option>
+  <option value="หญิง">หญิง</option>
+</select>
+<br><br>
+</div>
+<div class="form-group">
+<label for="text2">สีผิว:</label>
+<select class="form-control" id="text4" name="text4">
+  <option value="ขาว">ขาว</option>
+  <option value="แทน">แทน</option>
+  <option value="ดำ">ดำ</option>
+  <option value="เหลือง">เหลือง</option>
+</select>
+<br><br>
+</div>
+
+<div class="form-group">
+<label for="text2">กรุ๊ปเลือด:</label>
+<select class="form-control" id="text5" name="text5">
+  <option value="ยังไม่ทราบ">ยังไม่ทราบ</option>
+  <option value="A">กรุ๊ป A</option>
+    <option value="B">กรุ๊ป B</option>
+  <option value="AB">กรุ๊ป AB</option>
+  <option value="O">กรุ๊ป O</option>
+</select>
+<br><br>
+</div>
+<div class="form-group">
+  <label for="text2">สีผม:</label>
+  <input type="text" class="form-control" id="text6" name="text6"><br><br>
+</div>
+<div class="form-group">
+  <label for="text2">ชื่อแก๊ง:</label>
+  <input type="text" class="form-control" id="text7" name="text7"><br><br>
+</div>
+
+<div class="form-group">
+  <label for="text2">หมายเหตุ:</label>
+  <input type="text" class="form-control" id="text8" name="text8"><br><br>
+</div>
+
+
+
+
+
+  <label for="image1">ภาพที่ 1:</label>
+  <input type="file" id="image1" name="image1" accept=".jpg,.png" required><br><br>
+  <div class="row">
+    <div class="col">
+      <img src="" id="preview1" class="img-thumbnail" style="display:none;">
+    </div>
+  </div>
+  <label for="image2">ภาพที่ 2:</label>
+  <input type="file" id="image2" name="image2" accept=".jpg,.png"><br><br>
+  <div class="row">
+      <div class="col">
+      <img src="" id="preview2" class="img-thumbnail" style="display:none;">
+    </div>
+  </div>
+  <label for="image3">ภาพที่ 3:</label>
+  <input type="file" id="image3" name="image3" accept=".jpg,.png"><br><br>
+
+  <!-- ตัวอย่างการแสดงภาพตัวอย่าง แต่ละตัว -->
+<div class="row">
+
+  <div class="col">
+    <img src="" id="preview3" class="img-thumbnail" style="display:none;">
+  </div>
+</div>
+<label for="image3">ภาพที่ 4:</label>
+<input type="file" id="image4" name="image4" accept=".jpg,.png"><br><br>
+
+<!-- ตัวอย่างการแสดงภาพตัวอย่าง แต่ละตัว -->
+<div class="row">
+
+<div class="col">
+  <img src="" id="preview4" class="img-thumbnail" style="display:none;">
+</div>
+</div>
+<label for="image3">ภาพที่ 5:</label>
+<input type="file" id="image5" name="image5" accept=".jpg,.png"><br><br>
+
+<!-- ตัวอย่างการแสดงภาพตัวอย่าง แต่ละตัว -->
+<div class="row">
+
+<div class="col">
+  <img src="" id="preview5" class="img-thumbnail" style="display:none;">
+</div>
+</div>
+
+<!-- <input type="file" id="file-input" name="file-input" style="display:none;">
+<div id="drop-area" onclick="removeImage()">
+  <p>Drop image here or click to select</p>
+</div>
+<div style="position:relative;">
+  <img id="preview" src="" style="width:100px;height:100px;">
+
+</div> -->
+<style>
+  #mytextbox {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  #preview {
+    position: absolute;
+    bottom: -50px;
+    width: 50%;
   }
 </style>
 
-<body class="flex flex-col justify-center items-center content-center">
-  <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
-    <div class="grid grid-cols-2 w-full">
-      <div class="pl-5">
-        <img class="w-32 m-3" src="img/logo.png" alt="">
-      </div>
-      <div class="flex flex-row justify-end items-end content-end pr-10">
-        <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
-        <div class="relative">
-          <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search" type="text">
-          <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
-        </div>
-        <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
-        <i class="fa-regular fa-user text-2xl my-6 ml-3 mr-12"></i>
-      </div>
-    </div>
-  </nav>
+<script>
+  var dropArea = document.getElementById('drop-area');
+  var fileInput = document.getElementById('file-input');
+  var preview = document.getElementById('preview');
 
-  <div class="container py-10">
-    <div class="">
-      <div class="border-2 border-solid bg-white border-black z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="height: 500px; width: 900px;">
-        <d iv class="flex flex-col justify-center items-center content-center">
-          <p class="text-5xl m-8">REGISTER</p>
-          <form class="flex flex-col justify-center items-center content-center" method="post" action="save_register.php">
-          <div class="w-full grid grid-cols-2">
 
-            
-              <div class="flex flex-col justify-center items-center content-center border-solid border-r-2 border-black">
-                <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="username" placeholder="Username" type="text">
-                <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="firstname" placeholder="First name" type="text">
-                <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="lastname" placeholder="Last name" type="text">
-                <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="phone" placeholder="Phone" type="text">
-                <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="password" placeholder="Password" type="text">
-              </div>
-              
-            
+  // Prevent default drag behaviors
+  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, preventDefaults, false);
+    document.addEventListener(eventName, preventDefaults, false);
+  });
 
-            <div class="flex flex-col justify-center items-center content-center p-4">
-              <div class="w-full h-full border-2 border-solid border-black grid grid-rows-6 h-full p-4">
+  // Highlight drop area when item is dragged over it
+  ['dragenter', 'dragover'].forEach(eventName => {
+    dropArea.addEventListener(eventName, highlight, false);
+  });
 
-                <textarea class="row-span-3 border-2 border-solid border-black mb-3 p-2" name="house" placeholder="House No. / Village" name="" id=""></textarea>
-                <div class="row-span-3">
-                  <div class="grid grid-cols-2 w-full">
+  // Unhighlight drop area when item is dragged out of it
+  ['dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, unhighlight, false);
+  });
 
-                    <div class="flex flex-col justify-center items-center content-center py-1 mr-1">
-                      <select class="border-2 border-solid border-black w-full mb-5 h-10" name="province" id="province">
-                        <option>SELECT</option>
-                      </select>
-                      <select class="border-2 border-solid border-black w-full h-10" name="district" id="district">
-                        <option>SELECT</option>
-                      </select>
-                    </div>
-                    <div class="flex flex-col justify-center items-center content-center py-1 ml-1">
-                      <select class="border-2 border-solid border-black w-full mb-5 h-10" name="subdistrict" id="subdistrict">
-                        <option>SELECT</option>
-                      </select>
-                      <input class="h-10 border-2 border-solid border-black w-full p-2" placeholder="Post ID" type="text" name="postal">
-                    </div>
+  // Handle dropped files
+  dropArea.addEventListener('drop', handleDrop, false);
 
-                  </div>
-                </div>
+  // Handle file input change event
+  fileInput.addEventListener('change', handleFileInput, false);
 
-              </div>
-            </div>
+  // Handle paste event
+  document.addEventListener('paste', handlePaste, false);
 
-          </div>
-          <button class="bg-black text-white px-7 py-3 mt-4 rounded-xl" type="submit">Register</button>
-          </form>
-      </div>
-    </div>
-    <div class="border-2 border-solid border-black z-0 mt-5 ml-5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" style="height: 500px; width: 900px;">
-    </div>
-  </div>
+  function preventDefaults(event) {
+    event.preventDefault();
+    event.stopPropagation();
+  }
 
-  </div>
-</body>
+  function highlight() {
+    dropArea.style.background = 'lightgray';
+  }
 
-</html>
+  function unhighlight() {
+    dropArea.style.background = '';
+  }
+
+  function handleDrop(event) {
+    var dt = event.dataTransfer;
+    var files = dt.files;
+
+    handleFiles(files);
+  }
+
+  function handleFileInput(event) {
+    var files = event.target.files;
+
+    handleFiles(files);
+  }
+
+  function handlePaste(event) {
+  var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+  for (var i = 0; i < items.length; i++) {
+    if (items[i].type.indexOf('image') !== -1) {
+      var file = items[i].getAsFile();
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        clearPreview(); // ลบภาพที่แสดงใน Area ออก
+        preview.src = e.target.result;
+        preview.style.display = 'inline';
+        var blob = new Blob([file], {type: 'image/png'});
+        blob.name = "pasted-image.png";
+        var fileList = new FileList();
+        fileList.add(blob);
+        fileInput.files = fileList;
+      };
+      reader.readAsDataURL(file);
+      break;
+    }
+  }
+}
+
+function handleFiles(files) {
+clearPreview(); // ลบภาพที่แสดงใน Area ออก
+var file = files[0];
+var reader = new FileReader();
+reader.onload = function(e) {
+  preview.src = e.target.result;
+  preview.style.display = 'inline';
+  fileInput.files[0] = file;
+};
+reader.readAsDataURL(file);
+}
+  dropArea.addEventListener('mouseenter', addBlinkingCursor, false);
+dropArea.addEventListener('mouseleave', removeBlinkingCursor, false);
+
+function addBlinkingCursor() {
+  dropArea.style.cursor = 'text';
+  var intervalId = setInterval(function() {
+    dropArea.style.border = dropArea.style.border ? '' : '2px dashed gray';
+  }, 500);
+  dropArea.dataset.cursorInterval = intervalId;
+}
+
+function removeBlinkingCursor() {
+  dropArea.style.cursor = '';
+  clearInterval(dropArea.dataset.cursorInterval);
+  dropArea.style.border = '2px dashed gray';
+}
+
+dropArea.addEventListener('click', function() {
+  this.innerHTML = '&nbsp;';
+  this.contentEditable = 'true';
+  this.classList.add('editable');
+  this.focus();
+});
+
+dropArea.addEventListener('blur', function() {
+  if (!this.textContent.trim()) {
+    this.innerHTML = 'Drop image here or click to select';
+    this.contentEditable = 'false';
+    this.classList.remove('editable');
+  }
+});
+
+var blinkInterval;
+dropArea.addEventListener('focus', function() {
+  blinkInterval = setInterval(function() {
+    dropArea.classList.toggle('blink');
+  }, 500);
+});
+
+dropArea.addEventListener('blur', function() {
+  clearInterval(blinkInterval);
+  dropArea.classList.remove('blink');
+});
+
+function removeImage() {
+  preview.src = "";
+  preview.style.display = 'none';
+  fileInput.value = "";
+}
+
+function clearPreview() {
+  preview.src = '';
+  preview.style.display = 'none';
+}
+
+
+</script>
+
+
+
+
+  <input type="submit" value="Upload">
+</form>
+</div>
+</HTML>
+<!-- JavaScript เพื่อแสดงภาพตัวอย่างเมื่อเลือกไฟล์ -->
+<script>
+  function previewImage(event, preview) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var output = document.getElementById(preview);
+      output.src = reader.result;
+      output.style.display = "block";
+    }
+    reader.readAsDataURL(event.target.files[0]);
+  }
+
+  document.getElementById("image1").addEventListener("change", function(event){
+    previewImage(event, "preview1");
+  });
+  document.getElementById("image2").addEventListener("change", function(event){
+    previewImage(event, "preview2");
+  });
+  document.getElementById("image3").addEventListener("change", function(event){
+    previewImage(event, "preview3");
+  });
+  document.getElementById("image4").addEventListener("change", function(event){
+    previewImage(event, "preview4");
+  });
+  document.getElementById("image5").addEventListener("change", function(event){
+    previewImage(event, "preview5");
+  });
+  </script>
