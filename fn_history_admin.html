@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!----- framework tailwind ----->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
+</head>
+<body class="flex flex-col justify-center items-center content-center">
+    <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
+        <div class="grid grid-cols-2 w-full">
+            <div class="pl-5">
+                <img class="w-32 m-3" src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png" alt="">
+            </div>
+            <div class="flex flex-row justify-end items-end content-end pr-10">
+                <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
+                <div class="relative">
+                    <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search"
+                        type="text">
+                    <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
+                </div>
+                <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
+                <i class="fa-regular fa-user text-2xl my-6 ml-3 mr-12"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container p-10 flex flex-col justify-center items-center content-center">
+        <div class="w-full grid grid-cols-9 mb-10">
+            <p class="col-span-1 text-4xl">ORDER</p>
+            <hr class="col-span-8 border border-solid border-black mt-5">
+        </div>
+        <div class="w-full border-2 border-solid border-black h-12 grid grid-cols-11 hover:bg-gray-200">
+            <div class="w-full text-center col-span-1 bg-gray-300 flex items-center content-center justify-center">no.</div>
+            <div class="w-full text-center col-span-3 flex items-center content-center justify-center">customer name</div>
+            <div class="w-full text-center col-span-1 flex items-center content-center justify-center">amount</div>
+            <div class="w-full text-center col-span-2 flex items-center content-center justify-center">total price</div>
+            <div class="w-full text-center col-span-2 flex items-center content-center justify-center">date</div>
+            <div class="w-full text-center col-span-2 flex items-center content-center justify-center">status</div>
+        </div>
+        <button class="p-3 text-xl rounded-xl bg-black text-white mt-8">back to home</button>
+    </div>
+</body>
+</html>
