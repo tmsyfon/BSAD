@@ -1,5 +1,5 @@
 <?php
-require "inc/connect.php";
+require "../BSAD/frontend_user/inc/connect.php";
 
 // รับค่าจากฟอร์ม
 $username = $_POST['username'];
