@@ -11,6 +11,6 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     header("Location: home.php");
 } else {
-    header("Location: index.php");
+    header("Location: login.php");
 }
 ?>
