@@ -1,4 +1,20 @@
 <html lang="en">
+<?php
+session_start();
+if (isset($_SESSION['user_id'])) {
+  $user_id = $_SESSION['user_id'];
+  $user_permission = $_SESSION['permission'];
+  if($user_permission != 'stock'){
+    header("Location: home.php");
+  } 
+  
+  // ใช้ $user_id ได้ทุกหน้า
+} else {
+  // ถ้าไม่มี session ให้ redirect ไปหน้า Login
+  header("Location: login.php");
+  exit();
+}
+?>
 
 <head>
 
@@ -37,8 +53,7 @@
       <div class="flex flex-row justify-end items-end content-end pr-10">
         <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
         <div class="relative">
-          <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search"
-            type="text">
+          <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search" type="text">
           <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
         </div>
         <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
@@ -51,9 +66,7 @@
 
   <div class="container py-3 flex flex-col justify-center items-center content-center">
     <div class="">
-      <div
-        class="px-48 border-2 border-solid bg-white border-black z-10  mt-9"
-        style="height: 870px; width: 800px;">
+      <div class="px-48 border-2 border-solid bg-white border-black z-10  mt-9" style="height: 870px; width: 800px;">
 
         <div class="flex flex-col justify-start items-start content-start pt-12">
           <p class="text-5xl my-3">เพิ่มข้อมูลสินค้า</p>
@@ -95,7 +108,7 @@
             </div>
             <button class="bg-black text-white px-7 py-3 mt-3 rounded-xl">Submit</button>
           </form>
-          
+
         </div>
 
       </div>
