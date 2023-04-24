@@ -9,6 +9,7 @@ $sql = "SELECT * FROM regis_user WHERE username = '$username' AND password = '$p
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
+    $_SESSION['permission'] = $row["permission"];
     header("Location: home.php");
 } else {
     header("Location: login.php");
