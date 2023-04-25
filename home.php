@@ -3,8 +3,9 @@
 <?php
 session_start();
 $user_permission = $_SESSION['permission'];
-echo 'permission ='.$user_permission;
+echo 'permission =' . $user_permission;
 ?>
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +24,13 @@ echo 'permission ='.$user_permission;
   <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 
 </head>
+
+<style>
+  input.profile:checked~.subpro {
+    display: flex;
+  }
+</style>
+
 
 <body class="flex flex-col justify-center items-center content-center overflow-x-hidden">
 

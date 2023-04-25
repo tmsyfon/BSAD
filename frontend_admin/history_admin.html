@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,11 +13,20 @@
     <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 </head>
+
+<style>
+    input.profile:checked~.subpro {
+        display: flex;
+    }
+</style>
+
 <body class="flex flex-col justify-center items-center content-center">
     <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
         <div class="grid grid-cols-2 w-full">
             <div class="pl-5">
-                <img class="w-32 m-3" src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png" alt="">
+                <img class="w-32 m-3"
+                    src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png"
+                    alt="">
             </div>
             <div class="flex flex-row justify-end items-end content-end pr-10">
                 <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
@@ -37,8 +47,10 @@
             <hr class="col-span-8 border border-solid border-black mt-5">
         </div>
         <div class="w-full border-2 border-solid border-black h-12 grid grid-cols-11 hover:bg-gray-200">
-            <div class="w-full text-center col-span-1 bg-gray-300 flex items-center content-center justify-center">no.</div>
-            <div class="w-full text-center col-span-3 flex items-center content-center justify-center">customer name</div>
+            <div class="w-full text-center col-span-1 bg-gray-300 flex items-center content-center justify-center">no.
+            </div>
+            <div class="w-full text-center col-span-3 flex items-center content-center justify-center">customer name
+            </div>
             <div class="w-full text-center col-span-1 flex items-center content-center justify-center">amount</div>
             <div class="w-full text-center col-span-2 flex items-center content-center justify-center">total price</div>
             <div class="w-full text-center col-span-2 flex items-center content-center justify-center">date</div>
@@ -47,4 +59,5 @@
         <button class="p-3 text-xl rounded-xl bg-black text-white mt-8">back to home</button>
     </div>
 </body>
+
 </html>

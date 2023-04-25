@@ -4,7 +4,7 @@ session_start();
 if (isset($_SESSION['user_id'])) {
   $user_id = $_SESSION['user_id'];
   $user_permission = $_SESSION['permission'];
-  if($user_permission != 'stock'){
+  if ($user_permission != 'stock') {
     header("Location: home.php");
   }
 
@@ -42,26 +42,34 @@ if (isset($_SESSION['user_id'])) {
   * {
     font-family: 'Kanit', sans-serif;
   }
+
   .size-label {
-  display: inline-block;
-  padding: 6px 12px;
-  font-size: 14px;
-  font-weight: bold;
-  text-align: center;
-  border: 2px solid #000;
-  border-radius: 4px;
-  cursor: pointer;
+    display: inline-block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
   }
+
   .size-label:hover {
-  background-color: #000;
-  color: #fff;
+    background-color: #000;
+    color: #fff;
   }
+
   .size-input {
-  display: none;
+    display: none;
   }
-  .size-input:checked + .size-label {
-  background-color: #000;
-  color: #fff;
+
+  .size-input:checked+.size-label {
+    background-color: #000;
+    color: #fff;
+  }
+
+  input.profile:checked~.subpro {
+    display: flex;
   }
 </style>
 
@@ -99,27 +107,27 @@ if (isset($_SESSION['user_id'])) {
 
 
             <div class="grid grid-cols-5 gap-3 h-11 w-full mt-2">
-  <label class="w-full h-full border-2 border-solid border-black rounded-lg">
-    <input type="radio" name="size" value="S">
-    S
-  </label>
-  <label class="w-full h-full border-2 border-solid border-black rounded-lg">
-    <input type="radio" name="size" value="M">
-    M
-  </label>
-  <label class="w-full h-full border-2 border-solid border-black rounded-lg">
-    <input type="radio" name="size" value="L">
-    L
-  </label>
-  <label class="w-full h-full border-2 border-solid border-black rounded-lg">
-    <input type="radio" name="size" value="XL">
-    XL
-  </label>
-  <label class="w-full h-full border-2 border-solid border-black rounded-lg">
-    <input type="radio" name="size" value="XXL">
-    XXL
-  </label>
-</div>
+              <label class="w-full h-full border-2 border-solid border-black rounded-lg">
+                <input type="radio" name="size" value="S">
+                S
+              </label>
+              <label class="w-full h-full border-2 border-solid border-black rounded-lg">
+                <input type="radio" name="size" value="M">
+                M
+              </label>
+              <label class="w-full h-full border-2 border-solid border-black rounded-lg">
+                <input type="radio" name="size" value="L">
+                L
+              </label>
+              <label class="w-full h-full border-2 border-solid border-black rounded-lg">
+                <input type="radio" name="size" value="XL">
+                XL
+              </label>
+              <label class="w-full h-full border-2 border-solid border-black rounded-lg">
+                <input type="radio" name="size" value="XXL">
+                XXL
+              </label>
+            </div>
 
             <p class="text-lg my-2">amount</p>
             <input type="number" value="1" class="w-2/12 h-9 border-2 border-solid border-black rounded-lg text-center text-xl" name="product_amount">

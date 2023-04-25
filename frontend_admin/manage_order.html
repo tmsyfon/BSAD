@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,11 +11,20 @@
     <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 </head>
+
+<style>
+    input.profile:checked~.subpro {
+        display: flex;
+    }
+</style>
+
 <body class="flex flex-col justify-center items-center content-center">
     <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
         <div class="grid grid-cols-2 w-full">
             <div class="pl-5">
-                <img class="w-32 m-3" src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png" alt="">
+                <img class="w-32 m-3"
+                    src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png"
+                    alt="">
             </div>
             <div class="flex flex-row justify-end items-end content-end pr-10">
                 <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
@@ -75,7 +85,8 @@
                     </div>
                     <div class="w-full col-span-3 flex flex-row">
                         <input type="text" class="border-2 h-10 border-black p-3">
-                        <button class="bg-black text-white rounded-lg w-20 ml-2 hover:bg-white hover:text-black hover:border-2 hover:border-black">submit</button>
+                        <button
+                            class="bg-black text-white rounded-lg w-20 ml-2 hover:bg-white hover:text-black hover:border-2 hover:border-black">submit</button>
                     </div>
                 </div>
                 <div class="grid grid-cols-4 w-full p-5">
@@ -86,7 +97,9 @@
                         <p>date</p>
                     </div>
                     <div class="w-full col-span-2 flex flex-row tems-end content-end justify-end">
-                        <div class="w-36 h-10 rounded-xl bg-green-600 text-center items-center content-center justify-center flex flex-col text-white">status paymernt</div> 
+                        <div
+                            class="w-36 h-10 rounded-xl bg-green-600 text-center items-center content-center justify-center flex flex-col text-white">
+                            status paymernt</div>
                     </div>
                 </div>
             </div>
@@ -96,13 +109,16 @@
                     <div class="w-full overflow-auto" style="height: 450px;">
                         <div class="grid grid-cols-7 border-b border-solid border-black p-3 text-center">
                             <img class="bg-gray-200 w-24 h-24 col-span-1" src="" alt="">
-                            <div class="col-span-4 text-center items-center content-center justify-center flex">detail</div>
-                            <div class="col-span-1 text-center items-center content-center justify-center flex">amount</div>
-                            <div class="col-span-1 text-center items-center content-center justify-center flex">price</div>
+                            <div class="col-span-4 text-center items-center content-center justify-center flex">detail
+                            </div>
+                            <div class="col-span-1 text-center items-center content-center justify-center flex">amount
+                            </div>
+                            <div class="col-span-1 text-center items-center content-center justify-center flex">price
+                            </div>
                         </div>
-                        
+
                     </div>
-                    
+
                     <div class="w-full h-full mt-3 p-5 items-center content-center justify-center flex flex-col">
                         <div class="w-full grid grid-cols-2">
                             <div class="text-start text-xl">
@@ -112,13 +128,15 @@
                                 <p>baht</p>
                             </div>
                         </div>
-                        <button class="w-32 h-12 bg-black text-white mt-10 rounded-lg hover:bg-neutral-500">BACK</button>
+                        <button
+                            class="w-32 h-12 bg-black text-white mt-10 rounded-lg hover:bg-neutral-500">BACK</button>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
         </div>
     </div>
 </body>
+
 </html>

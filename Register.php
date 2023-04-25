@@ -33,6 +33,10 @@
   * {
     font-family: 'Kanit', sans-serif;
   }
+
+  input.profile:checked~.subpro {
+    display: flex;
+  }
 </style>
 
 <body class="flex flex-col justify-center items-center content-center">
@@ -59,9 +63,9 @@
         <d iv class="flex flex-col justify-center items-center content-center">
           <p class="text-5xl m-8">REGISTER</p>
           <form class="flex flex-col justify-center items-center content-center" method="post" action="save_register.php">
-          <div class="w-full grid grid-cols-2">
+            <div class="w-full grid grid-cols-2">
 
-            
+
               <div class="flex flex-col justify-center items-center content-center border-solid border-r-2 border-black">
                 <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="username" placeholder="Username" type="text">
                 <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="firstname" placeholder="First name" type="text">
@@ -69,39 +73,39 @@
                 <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="phone" placeholder="Phone" type="text">
                 <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="password" placeholder="Password" type="text">
               </div>
-              
-            
 
-            <div class="flex flex-col justify-center items-center content-center p-4">
-              <div class="w-full h-full border-2 border-solid border-black grid grid-rows-6 h-full p-4">
 
-                <textarea class="row-span-3 border-2 border-solid border-black mb-3 p-2" name="house" placeholder="House No. / Village" name="" id=""></textarea>
-                <div class="row-span-3">
-                  <div class="grid grid-cols-2 w-full">
 
-                    <div class="flex flex-col justify-center items-center content-center py-1 mr-1">
-                      <select class="border-2 border-solid border-black w-full mb-5 h-10" name="province" id="province">
-                        <option>SELECT</option>
-                      </select>
-                      <select class="border-2 border-solid border-black w-full h-10" name="district" id="district">
-                        <option>SELECT</option>
-                      </select>
+              <div class="flex flex-col justify-center items-center content-center p-4">
+                <div class="w-full h-full border-2 border-solid border-black grid grid-rows-6 h-full p-4">
+
+                  <textarea class="row-span-3 border-2 border-solid border-black mb-3 p-2" name="house" placeholder="House No. / Village" name="" id=""></textarea>
+                  <div class="row-span-3">
+                    <div class="grid grid-cols-2 w-full">
+
+                      <div class="flex flex-col justify-center items-center content-center py-1 mr-1">
+                        <select class="border-2 border-solid border-black w-full mb-5 h-10" name="province" id="province">
+                          <option>SELECT</option>
+                        </select>
+                        <select class="border-2 border-solid border-black w-full h-10" name="district" id="district">
+                          <option>SELECT</option>
+                        </select>
+                      </div>
+                      <div class="flex flex-col justify-center items-center content-center py-1 ml-1">
+                        <select class="border-2 border-solid border-black w-full mb-5 h-10" name="subdistrict" id="subdistrict">
+                          <option>SELECT</option>
+                        </select>
+                        <input class="h-10 border-2 border-solid border-black w-full p-2" placeholder="Post ID" type="text" name="postal">
+                      </div>
+
                     </div>
-                    <div class="flex flex-col justify-center items-center content-center py-1 ml-1">
-                      <select class="border-2 border-solid border-black w-full mb-5 h-10" name="subdistrict" id="subdistrict">
-                        <option>SELECT</option>
-                      </select>
-                      <input class="h-10 border-2 border-solid border-black w-full p-2" placeholder="Post ID" type="text" name="postal">
-                    </div>
-
                   </div>
+
                 </div>
-
               </div>
-            </div>
 
-          </div>
-          <button class="bg-black text-white px-7 py-3 mt-4 rounded-xl" type="submit">Register</button>
+            </div>
+            <button class="bg-black text-white px-7 py-3 mt-4 rounded-xl" type="submit">Register</button>
           </form>
       </div>
     </div>

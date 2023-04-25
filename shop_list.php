@@ -3,7 +3,8 @@
 <?php
 session_start();
 require_once 'inc/connect.php';
- ?>
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,8 +17,12 @@ require_once 'inc/connect.php';
     <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 </head>
 <style>
+    input.profile:checked~.subpro {
+        display: flex;
+    }
+
     input.menu:checked~.submenu {
-    display: flex;
+        display: flex;
     }
 
     input[type=range] {
@@ -27,9 +32,11 @@ require_once 'inc/connect.php';
         width: 100%;
         background-color: transparent;
     }
+
     input[type=range]:focus {
         outline: none;
     }
+
     input[type=range]::-webkit-slider-runnable-track {
         width: 100%;
         height: 10px;
@@ -40,6 +47,7 @@ require_once 'inc/connect.php';
         border-radius: 5px;
         border: 1px solid #000000;
     }
+
     input[type=range]::-webkit-slider-thumb {
         box-shadow: 1px 1px 1px #000000;
         border: 1px solid #000000;
@@ -51,9 +59,11 @@ require_once 'inc/connect.php';
         -webkit-appearance: none;
         margin-top: -11px;
     }
+
     input[type=range]:focus::-webkit-slider-runnable-track {
         background: #9C9C9C;
     }
+
     input[type=range]::-moz-range-track {
         width: 100%;
         height: 10px;
@@ -64,6 +74,7 @@ require_once 'inc/connect.php';
         border-radius: 5px;
         border: 1px solid #000000;
     }
+
     input[type=range]::-moz-range-thumb {
         box-shadow: 1px 1px 1px #000000;
         border: 1px solid #000000;
@@ -73,6 +84,7 @@ require_once 'inc/connect.php';
         background: #FFFFFF;
         cursor: pointer;
     }
+
     input[type=range]::-ms-track {
         width: 100%;
         height: 10px;
@@ -82,18 +94,21 @@ require_once 'inc/connect.php';
         border-color: transparent;
         color: transparent;
     }
+
     input[type=range]::-ms-fill-lower {
         background: #9C9C9C;
         border: 1px solid #000000;
         border-radius: 10px;
         box-shadow: 1px 1px 1px #000000;
     }
+
     input[type=range]::-ms-fill-upper {
         background: #9C9C9C;
         border: 1px solid #000000;
         border-radius: 10px;
         box-shadow: 1px 1px 1px #000000;
     }
+
     input[type=range]::-ms-thumb {
         margin-top: 1px;
         box-shadow: 1px 1px 1px #000000;
@@ -104,14 +119,16 @@ require_once 'inc/connect.php';
         /* background: #FFFFFF; */
         cursor: pointer;
     }
+
     input[type=range]:focus::-ms-fill-lower {
         background: #9C9C9C;
     }
+
     input[type=range]:focus::-ms-fill-upper {
         background: #9C9C9C;
     }
-
 </style>
+
 <body class="flex flex-col justify-center items-center content-center">
     <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
         <div class="grid grid-cols-2 w-full">
@@ -121,8 +138,7 @@ require_once 'inc/connect.php';
             <div class="flex flex-row justify-end items-end content-end pr-10">
                 <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
                 <div class="relative">
-                    <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search"
-                        type="text">
+                    <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search" type="text">
                     <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
                 </div>
                 <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
@@ -130,16 +146,15 @@ require_once 'inc/connect.php';
             </div>
         </div>
     </nav>
-<?php
-// คำสั่ง SQL query เพื่อดึงข้อมูลจากตาราง products
-$sql = "SELECT * FROM product";
-$result = mysqli_query($conn, $sql);
-?>
+    <?php
+    // คำสั่ง SQL query เพื่อดึงข้อมูลจากตาราง products
+    $sql = "SELECT * FROM product";
+    $result = mysqli_query($conn, $sql);
+    ?>
     <div class="container py-10 grid grid-cols-8">
 
         <div class="col-span-2">
-            <div class="box-content w-64 p-4 border-solid border-2 border-[#000000] shadow-md ml-10  rounded-xl"
-                style="height: 500px;">
+            <div class="box-content w-64 p-4 border-solid border-2 border-[#000000] shadow-md ml-10  rounded-xl" style="height: 500px;">
 
                 <div class="mt-5">
                     <input id="era" type="checkbox" name="menu" class="menu hidden" />
@@ -183,10 +198,10 @@ $result = mysqli_query($conn, $sql);
                         </datalist>
 
                         <script>
-                            function show(element){
-                              let val = element.value;
-                              document.querySelector(`#value`).innerHTML = `${parseInt(val)}`;
-                              console.log(val)
+                            function show(element) {
+                                let val = element.value;
+                                document.querySelector(`#value`).innerHTML = `${parseInt(val)}`;
+                                console.log(val)
                             }
                         </script>
                     </div>
@@ -226,21 +241,21 @@ $result = mysqli_query($conn, $sql);
             </div>
 
             <div class="grid grid-cols-4 mt-6 gap-5">
-<?php
-if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)) {
-?>
-                <div class="w-full cursor-pointer">
-                    <div class="p-3 w-full h-80 border-black border-2 border-solid flex flex-col justify-center items-center content-center">
-                        <img class="w-full h-64 mb-3 overflow-hidden" src="https://cdn.discordapp.com/attachments/1020724048889659442/1098322374346158150/pic1-1.jpg" alt="">
-                        <p class="text-xl font-semibold"><?php echo $row["add_name"]; ?></p>
-                        <p class="text-lg"><?php echo $row["add_price"]; ?></p>
-                    </div>
-                </div>
-<?php
-}
-}
-?>
+                <?php
+                if (mysqli_num_rows($result) > 0) {
+                    while ($row = mysqli_fetch_assoc($result)) {
+                ?>
+                        <div class="w-full cursor-pointer">
+                            <div class="p-3 w-full h-80 border-black border-2 border-solid flex flex-col justify-center items-center content-center">
+                                <img class="w-full h-64 mb-3 overflow-hidden" src="https://cdn.discordapp.com/attachments/1020724048889659442/1098322374346158150/pic1-1.jpg" alt="">
+                                <p class="text-xl font-semibold"><?php echo $row["add_name"]; ?></p>
+                                <p class="text-lg"><?php echo $row["add_price"]; ?></p>
+                            </div>
+                        </div>
+                <?php
+                    }
+                }
+                ?>
             </div>
 
         </div>
@@ -252,4 +267,5 @@ if (mysqli_num_rows($result) > 0) {
 <script>
 
 </script>
+
 </html>

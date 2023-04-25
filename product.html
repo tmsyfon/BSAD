@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product</title>
+
+  <!----- framework tailwind ----->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  input.sizes:checked~.mes {
+    background-color: black;
+  }
+
+  input.sizem:checked~.mem {
+    background-color: black;
+  }
+
+  input.sizel:checked~.mel {
+    background-color: black;
+  }
+
+  input.sizexl:checked~.mexl {
+    background-color: black;
+  }
+
+  input.sizexxl:checked~.mexxl {
+    background-color: black;
+  }
+
+  input.profile:checked~.subpro {
+    display: flex;
+  }
+</style>
+
+<body class="flex flex-col justify-center items-center content-center">
+  <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
+    <div class="grid grid-cols-2 w-full">
+      <div class="pl-5">
+        <img class="w-32 m-3" src="img/logo.png" alt="">
+      </div>
+      <div class="flex flex-row justify-end items-end content-end pr-10">
+        <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
+        <div class="relative">
+          <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search"
+            type="text">
+          <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
+        </div>
+        <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
+        <i class="fa-regular fa-user text-2xl my-6 ml-3 mr-12"></i>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container px-52">
+    <div class="grid grid-cols-2" style="margin-top: 3%;">
+      <!-----รูปสินค้าใหญ่----->
+      <div class="flex flex-col justify-center items-center content-center">
+        <img src="./img/pic1-1.jpg" alt="" class="cover" style="width:370px; height: 370px;">
+
+        <div class="grid grid-cols-4 mt-3 gap-2">
+          <a href="#">
+            <img src="https://placehold.it/150x80?text=IMAGE" alt="" style="width: 6rem; height: 6rem;">
+          </a>
+          <a href="#">
+            <img src="https://placehold.it/150x80?text=IMAGE" alt="" style="width: 6rem; height: 6rem;">
+          </a>
+          <a href="#">
+            <img src="https://placehold.it/150x80?text=IMAGE" alt="" style="width: 6rem; height: 6rem;">
+          </a>
+          <a href="#">
+            <img src="https://placehold.it/150x80?text=IMAGE" alt="" style="width: 6rem; height: 6rem;">
+          </a>
+        </div>
+      </div>
+
+      <!----ชื่อสินค้า------>
+      <div style="margin-left: 10%;">
+        <h1 class="" style="font-size: 30px;">
+          <b> Leopard Shirt Dress</b>
+        </h1><br>
+        <!----ราคาสินค้า----->
+        <div class="" style="font-size: 20px;"> <strong>Price : </strong> <span class="">฿300.00</span></div><br>
+
+        <!------ไซต์----->
+        <div class="grid grid-cols-8 justify-center items-center content-center">
+          <div class="" style="font-size: 20px;"> <strong>Size : </strong></div>
+
+          <div class="flex flex-row w-full text-center">
+            <input id="sizes" type="radio" name="size" class="sizes hidden">
+            <label for="sizes" class="mr-1 mes bg-gray-500 text-white rounded-lg hover:bg-black">
+              <div class="h-8 w-16 text-center flex justify-center content-center items-center">S</div>
+            </label>
+
+            <input id="sizem" type="radio" name="size" class="sizem hidden">
+            <label for="sizem" class="mr-1 mem bg-gray-500 text-white rounded-lg hover:bg-black">
+              <div class="h-8 w-16 text-center flex justify-center content-center items-center ">M</div>
+            </label>
+
+            <input id="sizel" type="radio" name="size" class="sizel hidden">
+            <label for="sizel" class="mr-1 mel bg-gray-500 text-white rounded-lg hover:bg-black ">
+              <div class="h-8 w-16 text-center flex justify-center content-center items-center ">L</div>
+            </label>
+
+            <input id="sizexl" type="radio" name="size" class="sizexl hidden">
+            <label for="sizexl" class="mr-1 mexl bg-gray-500 text-white rounded-lg hover:bg-black">
+              <div class="h-8 w-16 text-center flex justify-center content-center items-center ">XL</div>
+            </label>
+
+            <input id="sizexxl" type="radio" name="size" class="sizexxl hidden">
+            <label for="sizexxl" class="mr-1 mexxl bg-gray-500 text-white rounded-lg hover:bg-black">
+              <div class="h-8 w-16 text-center flex justify-center content-center items-center ">XXL</div>
+            </label>
+          </div>
+
+
+        </div>
+        <p class="text-sm text-rose-400">* select your size</p><br>
+        <!------จำนวนสินค้า------>
+        <div style="font-size: 20px;" class="flex flex-row">
+          <p><b>จำนวน</b></p>
+          <input type="number" class="border-2 border-black ml-3 w-20 text-center" min="1" value="1">
+        </div><br>
+        <!-----ปุ่มเพิ่มลงตะกร้า------->
+        <button class="bg-black text-white rounded-xl p-3 ">ADD TO CART</button>
+
+        <div class="border-2 border-solid bg-white border-black mt-5 p-2" style="width: 80%; height: 8rem">
+          <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad soluta illum odio assumenda libero corrupti
+            suscipit. Aperiam saepe quaerat magnam.</h3>
+        </div><br>
+      </div>
+
+    </div>
+  </div>
+  <!------Product------->
+
+
+  <!-------รูป4รูปของสินค้า---------->
+  <div class="grid grid-cols-2" style="margin-top: 3%;">
+
+    <!----------รายละเอียดสินค้า--------------->
+
+  </div>
+
+
+
+</body>
+
+</html>
