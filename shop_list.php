@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+require_once 'inc/connect.php';
+ ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -127,7 +130,11 @@
             </div>
         </div>
     </nav>
-
+<?php
+// คำสั่ง SQL query เพื่อดึงข้อมูลจากตาราง products
+$sql = "SELECT * FROM product";
+$result = mysqli_query($conn, $sql);
+?>
     <div class="container py-10 grid grid-cols-8">
 
         <div class="col-span-2">
@@ -136,8 +143,8 @@
 
                 <div class="mt-5">
                     <input id="brand" type="checkbox" name="menu" class="menu hidden" />
-                    <label for="brand" class="cursor-pointer"><b>BRAND</b></label>                        
-                   
+                    <label for="brand" class="cursor-pointer"><b>BRAND</b></label>
+
                     <div class="submenu hidden flex flex-col">
                         <div>
                             <input id="brand1" class="checked:bg-gray-300" type="checkbox">
@@ -156,8 +163,8 @@
 
                 <div class="mt-5">
                     <input id="price" type="checkbox" name="menu" class="menu hidden" />
-                    <label for="price" class="cursor-pointer"><b>PRICE</b></label>                        
-               
+                    <label for="price" class="cursor-pointer"><b>PRICE</b></label>
+
                     <div class="submenu hidden flex flex-col">
                         <p> 0 - <output id="value">500</output></p>
                         <input id="price" type="range" max="9000" value="500" list="markers" oninput="show(this)">
@@ -187,8 +194,8 @@
 
                 <div class="mt-5">
                     <input id="size" type="checkbox" name="menu" class="menu hidden" />
-                    <label for="size" class="cursor-pointer"><b>SIZE</b></label>                        
-               
+                    <label for="size" class="cursor-pointer"><b>SIZE</b></label>
+
                     <div class="submenu hidden flex flex-col">
                         <div>
                             <input id="brand1" class="checked:bg-gray-300" type="checkbox">
@@ -223,20 +230,26 @@
             </div>
 
             <div class="grid grid-cols-4 mt-6 gap-5">
-
+<?php
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+?>
                 <div class="w-full cursor-pointer">
                     <div class="p-3 w-full h-80 border-black border-2 border-solid flex flex-col justify-center items-center content-center">
                         <img class="w-full h-64 mb-3 overflow-hidden" src="https://cdn.discordapp.com/attachments/1020724048889659442/1098322374346158150/pic1-1.jpg" alt="">
-                        <p class="text-xl font-semibold">Name</p>
-                        <p class="text-lg">price</p>
+                        <p class="text-xl font-semibold"><?php echo $row["add_name"]; ?></p>
+                        <p class="text-lg"><?php echo $row["add_price"]; ?></p>
                     </div>
                 </div>
-                
+<?php
+}
+}
+?>
             </div>
-            
+
         </div>
-        
-        
+
+
     </div>
 
 </body>
