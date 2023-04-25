@@ -53,13 +53,13 @@ echo 'permission ='.$user_permission;
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1099792992463757354/1.png?width=1250&height=562" alt="First slide">
+        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1100049228623003658/3.png?width=1440&height=461" alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1099792992690262096/2.png?width=1250&height=562" alt="Second slide">
+        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1100049228912414790/2.png?width=1440&height=461" alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1099792992958689280/3.png?width=1250&height=562" alt="Third slide">
+        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1100049229252132864/1.png?width=1440&height=461" alt="Third slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
