@@ -142,21 +142,21 @@ $result = mysqli_query($conn, $sql);
                 style="height: 500px;">
 
                 <div class="mt-5">
-                    <input id="brand" type="checkbox" name="menu" class="menu hidden" />
-                    <label for="brand" class="cursor-pointer"><b>BRAND</b></label>
+                    <input id="era" type="checkbox" name="menu" class="menu hidden" />
+                    <label for="era" class="cursor-pointer"><b>ERA</b></label>
 
                     <div class="submenu hidden flex flex-col">
                         <div>
-                            <input id="brand1" class="checked:bg-gray-300" type="checkbox">
-                            <label for="brand1">brand1</label>
+                            <input id="1970" class="checked:bg-gray-300" type="checkbox">
+                            <label for="1970">1970S</label>
                         </div>
                         <div>
-                            <input id="brand1" class="checked:bg-gray-300" type="checkbox">
-                            <label for="brand1">brand1</label>
+                            <input id="1980" class="checked:bg-gray-300" type="checkbox">
+                            <label for="1980">1980S</label>
                         </div>
                         <div>
-                            <input id="brand1" class="checked:bg-gray-300" type="checkbox">
-                            <label for="brand1">brand1</label>
+                            <input id="1990" class="checked:bg-gray-300" type="checkbox">
+                            <label for="1990">1990S</label>
                         </div>
                     </div>
                 </div>
@@ -198,24 +198,20 @@ $result = mysqli_query($conn, $sql);
 
                     <div class="submenu hidden flex flex-col">
                         <div>
-                            <input id="brand1" class="checked:bg-gray-300" type="checkbox">
-                            <label for="brand1">S</label>
+                            <input id="era1" class="checked:bg-gray-300" type="checkbox">
+                            <label for="era1">S</label>
                         </div>
                         <div>
-                            <input id="brand1" class="checked:bg-gray-300" type="checkbox">
-                            <label for="brand1">M</label>
+                            <input id="era1" class="checked:bg-gray-300" type="checkbox">
+                            <label for="era1">M</label>
                         </div>
                         <div>
-                            <input id="brand1" class="checked:bg-gray-300" type="checkbox">
-                            <label for="brand1">L</label>
+                            <input id="era1" class="checked:bg-gray-300" type="checkbox">
+                            <label for="era1">L</label>
                         </div>
                         <div>
-                            <input id="brand1" class="checked:bg-gray-300" type="checkbox">
-                            <label for="brand1">XL</label>
-                        </div>
-                        <div>
-                            <input id="brand1" class="checked:bg-gray-300" type="checkbox">
-                            <label for="brand1">XXL</label>
+                            <input id="era1" class="checked:bg-gray-300" type="checkbox">
+                            <label for="era1">XL</label>
                         </div>
                     </div>
                 </div>
