@@ -46,7 +46,17 @@ echo 'permission =' . $user_permission;
           <i class="fa-solid fa-magnifying-glass" style="font-size: 1.25rem; line-height: 1.75rem; position: absolute; right: 2rem; top: 1.5rem;"></i>
         </div>
         <i class="fa-solid fa-cart-shopping" style="font-size: 1.5rem; line-height: 2rem; margin: 1.5rem;"></i>
-        <i class="fa-regular fa-user" style="font-size: 1.5rem; line-height: 2rem; margin: 1.5rem 3rem 1.5rem 0.75rem;"></i>
+        <!-- ไอคอนรูปโปรไฟล์ -->
+        <input type="checkbox" class="profile hidden" id="profile" name="profile">
+        <label for="profile" class="m-3 mb-4">
+          <i class="fa-regular fa-user" style="font-size: 1.5rem; line-height: 2rem; "></i>
+        </label>
+        <!-- submenu ที่ยื่นออกมา -->
+        <div class="subpro hidden absolute top-20 mt-1 right-12 w-40 h-20 border-2 border-black bg-white flex flex-col justify-center content-center items-center text-center">
+          <a class="h-10 p-1 w-full hover:bg-black hover:text-white hover:no-underline" href="">History Order</a>
+          <a class="h-10 p-1 border-t-2 border-black w-full hover:bg-black hover:text-white hover:no-underline" href="">Log out</a>
+        </div>
+
       </div>
     </div>
   </nav>
