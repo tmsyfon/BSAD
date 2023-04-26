@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+$user_permission = $_SESSION['permission'];
+require_once 'inc/connect.php';
+if (isset($_GET['id'])) {
+    $add_id = $_GET['id'];
 
+    // ใช้ค่า id ในการดึงข้อมูลจากฐานข้อมูล
+    $query = "SELECT * FROM product WHERE add_id = $add_id";
+    $result = mysqli_query($conn, $query);
+    $row = mysqli_fetch_assoc($result);
+
+
+    $add_size = $row['add_size'];
+    $add_amount = $row['add_amount'];
+    $add_detail = $row['add_detail'];
+}
+
+ ?>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,6 +30,11 @@
   <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 </head>
+<style>
+  input.profile:checked~.subpro {
+    display: flex;
+  }
+</style>
 <style>
   input.sizes:checked~.mes {
     background-color: black;
@@ -73,32 +96,58 @@
   <div class="container px-52">
     <div class="grid grid-cols-2" style="margin-top: 3%;">
       <!-----รูปสินค้าใหญ่----->
-      <div class="flex flex-col justify-center items-center content-center">
-        <img src="./img/pic1-1.jpg" alt="" class="cover" style="width:370px; height: 370px;">
+      <?php
+      $sql1 = "SELECT * FROM image WHERE add_id = $add_id LIMIT 1";
+      $result1 = mysqli_query($conn, $sql1);
+      if ($result1->num_rows > 0) {
+        while($row1 = $result1->fetch_assoc()) {
+          if (!empty($row1["img_link"])) {
+            $images = $row1["img_link"];
 
+      ?>
+      <div class="flex flex-col justify-center items-center content-center">
+        <img src="./img/<?php echo $images; ?>" alt="" class="cover" style="width:370px; height: 370px;">
+        <?php
+      }
+    }
+  }
+        ?>
         <div class="grid grid-cols-4 mt-3 gap-2">
+          <?php
+     $sql2 = "SELECT * FROM image WHERE add_id = $add_id";
+     $result2 = mysqli_query($conn, $sql2);
+       if ($result2->num_rows > 0) {
+         // ตั้งค่า flag เป็น false ให้ก่อนเข้าลูป while
+ $first = false;
+       while($row2 = $result2->fetch_assoc()) {
+         if (!$first) {
+     $first = true;
+     continue;
+   }
+          // if (!$first) { // Skip first row
+            $image_link2 = $row2['img_link'];
+
+   ?>
           <a href="#">
-            <img src="https://placehold.it/150x80?text=IMAGE" alt="" style="width: 6rem; height: 6rem;">
+            <img src="./img/<?php echo $image_link2; ?>" alt="" style="width: 6rem; height: 6rem;">
           </a>
-          <a href="#">
-            <img src="https://placehold.it/150x80?text=IMAGE" alt="" style="width: 6rem; height: 6rem;">
-          </a>
-          <a href="#">
-            <img src="https://placehold.it/150x80?text=IMAGE" alt="" style="width: 6rem; height: 6rem;">
-          </a>
-          <a href="#">
-            <img src="https://placehold.it/150x80?text=IMAGE" alt="" style="width: 6rem; height: 6rem;">
-          </a>
+          <?php
+}
+}
+          ?>
+
+
+
         </div>
       </div>
 
       <!----ชื่อสินค้า------>
       <div style="margin-left: 10%;">
         <h1 class="" style="font-size: 30px;">
-          <b> Leopard Shirt Dress</b>
+          <b> <?php echo $row["add_name"]; ?></b>
         </h1><br>
         <!----ราคาสินค้า----->
-        <div class="" style="font-size: 20px;"> <strong>Price : </strong> <span class="">฿300.00</span></div><br>
+        <div class="" style="font-size: 20px;"> <strong>Price : </strong> <span class=""><?php echo '฿'.$row["add_price"];?></span></div><br>
 
         <!------ไซต์----->
         <div class="grid grid-cols-8 justify-center items-center content-center">
@@ -106,27 +155,27 @@
 
           <div class="flex flex-row w-full text-center">
             <input id="sizes" type="radio" name="size" class="sizes hidden">
-            <label for="sizes" class="mr-1 mes bg-gray-500 text-white rounded-lg hover:bg-black">
+            <label for="sizes" class="mr-1 mes bg-gray-500 text-white rounded-lg " <?php if($add_size == 'S') { ?> style="background-color: black;" <?php } ?> >
               <div class="h-8 w-16 text-center flex justify-center content-center items-center">S</div>
             </label>
 
             <input id="sizem" type="radio" name="size" class="sizem hidden">
-            <label for="sizem" class="mr-1 mem bg-gray-500 text-white rounded-lg hover:bg-black">
+            <label for="sizem" class="mr-1 mem bg-gray-500 text-white rounded-lg " <?php if($add_size == 'M') { ?> style="background-color: black;" <?php } ?>>
               <div class="h-8 w-16 text-center flex justify-center content-center items-center ">M</div>
             </label>
 
             <input id="sizel" type="radio" name="size" class="sizel hidden">
-            <label for="sizel" class="mr-1 mel bg-gray-500 text-white rounded-lg hover:bg-black ">
+            <label for="sizel" class="mr-1 mel bg-gray-500 text-white rounded-lg " <?php if($add_size == 'L') { ?> style="background-color: black;" <?php } ?>>
               <div class="h-8 w-16 text-center flex justify-center content-center items-center ">L</div>
             </label>
 
             <input id="sizexl" type="radio" name="size" class="sizexl hidden">
-            <label for="sizexl" class="mr-1 mexl bg-gray-500 text-white rounded-lg hover:bg-black">
+            <label for="sizexl" class="mr-1 mexl bg-gray-500 text-white rounded-lg " <?php if($add_size == 'XL') { ?> style="background-color: black;" <?php } ?>>
               <div class="h-8 w-16 text-center flex justify-center content-center items-center ">XL</div>
             </label>
 
             <input id="sizexxl" type="radio" name="size" class="sizexxl hidden">
-            <label for="sizexxl" class="mr-1 mexxl bg-gray-500 text-white rounded-lg hover:bg-black">
+            <label for="sizexxl" class="mr-1 mexxl bg-gray-500 text-white rounded-lg ">
               <div class="h-8 w-16 text-center flex justify-center content-center items-center ">XXL</div>
             </label>
           </div>
@@ -137,20 +186,20 @@
         <!------จำนวนสินค้า------>
         <div style="font-size: 20px;" class="flex flex-row">
           <p><b>จำนวน</b></p>
-          <input type="number" class="border-2 border-black ml-3 w-20 text-center" min="1" value="1">
+          <input type="number" class="border-2 border-black ml-3 w-20 text-center" min="1" value="<?php echo $add_amount; ?>">
         </div><br>
         <!-----ปุ่มเพิ่มลงตะกร้า------->
         <button class="bg-black text-white rounded-xl p-3 ">ADD TO CART</button>
 
         <div class="border-2 border-solid bg-white border-black mt-5 p-2" style="width: 80%; height: 8rem">
-          <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad soluta illum odio assumenda libero corrupti
-            suscipit. Aperiam saepe quaerat magnam.</h3>
+          <h3><?php echo $add_detail; ?></h3>
         </div><br>
       </div>
 
     </div>
   </div>
   <!------Product------->
+
 
 
   <!-------รูป4รูปของสินค้า---------->

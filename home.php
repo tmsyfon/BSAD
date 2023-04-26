@@ -24,42 +24,16 @@ echo 'permission =' . $user_permission;
   <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 
 </head>
-
 <style>
   input.profile:checked~.subpro {
     display: flex;
   }
 </style>
 
-
 <body class="flex flex-col justify-center items-center content-center overflow-x-hidden">
-
-  <nav style="height: 85px; width: 100vw; border-bottom: 2px solid black;">
-    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%;">
-      <div style="padding-left: 1.25rem;">
-        <img style="width: 8rem; margin: 0.75rem;" src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png" alt="">
-      </div>
-      <div style="display: flex; flex-direction: row; justify-content: flex-end; align-items: flex-end; align-content: flex-end; padding-right: 2.5rem;">
-        <a style="font-size: 1.5rem; line-height: 2rem; margin: 1.5rem; font-weight: 600;" href="">SHOP</a>
-        <div style="position: relative;">
-          <input style="padding: 0.75rem; height: 3rem; width: 16rem; border: 2px solid black; border-radius: 1.5rem; margin: 1rem;" placeholder="search" type="text">
-          <i class="fa-solid fa-magnifying-glass" style="font-size: 1.25rem; line-height: 1.75rem; position: absolute; right: 2rem; top: 1.5rem;"></i>
-        </div>
-        <i class="fa-solid fa-cart-shopping" style="font-size: 1.5rem; line-height: 2rem; margin: 1.5rem;"></i>
-        <!-- ไอคอนรูปโปรไฟล์ -->
-        <input type="checkbox" class="profile hidden" id="profile" name="profile">
-        <label for="profile" class="m-3 mb-4">
-          <i class="fa-regular fa-user" style="font-size: 1.5rem; line-height: 2rem; "></i>
-        </label>
-        <!-- submenu ที่ยื่นออกมา -->
-        <div class="subpro hidden absolute top-20 mt-1 right-12 w-40 h-20 border-2 border-black bg-white flex flex-col justify-center content-center items-center text-center">
-          <a class="h-10 p-1 w-full hover:bg-black hover:text-white hover:no-underline" href="">History Order</a>
-          <a class="h-10 p-1 border-t-2 border-black w-full hover:bg-black hover:text-white hover:no-underline" href="">Log out</a>
-        </div>
-
-      </div>
-    </div>
-  </nav>
+  <?php
+  require_once 'menu.php';
+  ?>
 
   <!------HOME------->
 
@@ -71,13 +45,13 @@ echo 'permission =' . $user_permission;
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1100049228623003658/3.png?width=1440&height=461" alt="First slide">
+        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1099792992463757354/1.png?width=1250&height=562" alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1100049228912414790/2.png?width=1440&height=461" alt="Second slide">
+        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1099792992690262096/2.png?width=1250&height=562" alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1100049229252132864/1.png?width=1440&height=461" alt="Third slide">
+        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1099792992958689280/3.png?width=1250&height=562" alt="Third slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
