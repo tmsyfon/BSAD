@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,20 +12,11 @@
     <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 </head>
-
-<style>
-    input.profile:checked~.subpro {
-        display: flex;
-    }
-</style>
-
 <body class="flex flex-col justify-center items-center content-center">
     <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
         <div class="grid grid-cols-2 w-full">
             <div class="pl-5">
-                <img class="w-32 m-3"
-                    src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png"
-                    alt="">
+                <img class="w-32 m-3" src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png" alt="">
             </div>
             <div class="flex flex-row justify-end items-end content-end pr-10">
                 <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
@@ -36,19 +26,7 @@
                     <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
                 </div>
                 <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
-                <!-- ไอคอนรูปโปรไฟล์ -->
-                <input type="checkbox" class="profile hidden" id="profile" name="profile">
-                <label for="profile" class="m-3 mb-6">
-                    <i class="fa-regular fa-user" style="font-size: 1.5rem; line-height: 2rem;"></i>
-                </label>
-                <!-- submenu ที่ยื่นออกมา -->
-                <div
-                    class="subpro hidden absolute top-20 mt-1 right-12 w-40 h-20 border-2 border-black bg-white flex flex-col justify-center content-center items-center text-center">
-                    <a class="h-10 p-1 w-full hover:bg-black hover:text-white hover:no-underline" href="">History
-                        Order</a>
-                    <a class="h-10 p-1 border-t-2 border-black w-full hover:bg-black hover:text-white hover:no-underline"
-                        href="">Log out</a>
-                </div>
+                <i class="fa-regular fa-user text-2xl my-6 ml-3 mr-12"></i>
             </div>
         </div>
     </nav>
@@ -59,10 +37,8 @@
             <hr class="col-span-8 border border-solid border-black mt-5">
         </div>
         <div class="w-full border-2 border-solid border-black h-12 grid grid-cols-11 hover:bg-gray-200">
-            <div class="w-full text-center col-span-1 bg-gray-300 flex items-center content-center justify-center">no.
-            </div>
-            <div class="w-full text-center col-span-3 flex items-center content-center justify-center">customer name
-            </div>
+            <div class="w-full text-center col-span-1 bg-gray-300 flex items-center content-center justify-center">no.</div>
+            <div class="w-full text-center col-span-3 flex items-center content-center justify-center">customer name</div>
             <div class="w-full text-center col-span-1 flex items-center content-center justify-center">amount</div>
             <div class="w-full text-center col-span-2 flex items-center content-center justify-center">total price</div>
             <div class="w-full text-center col-span-2 flex items-center content-center justify-center">date</div>
@@ -71,5 +47,4 @@
         <button class="p-3 text-xl rounded-xl bg-black text-white mt-8">back to home</button>
     </div>
 </body>
-
 </html>

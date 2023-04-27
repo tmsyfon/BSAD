@@ -33,17 +33,13 @@
   * {
     font-family: 'Kanit', sans-serif;
   }
-
-  input.profile:checked~.subpro {
-    display: flex;
-  }
 </style>
 
 <body class="flex flex-col justify-center items-center content-center">
   <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
     <div class="grid grid-cols-2 w-full">
       <div class="pl-5">
-        <img class="w-32 m-3" src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png" alt="">
+        <img class="w-32 m-3" src="img/logo.png" alt="">
       </div>
       <div class="flex flex-row justify-end items-end content-end pr-10">
         <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
@@ -52,17 +48,7 @@
           <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
         </div>
         <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
-        <!-- ไอคอนรูปโปรไฟล์ -->
-        <input type="checkbox" class="profile hidden" id="profile" name="profile">
-        <label for="profile" class="m-3 mb-6">
-          <i class="fa-regular fa-user" style="font-size: 1.5rem; line-height: 2rem;"></i>
-        </label>
-        <!-- submenu ที่ยื่นออกมา -->
-        <div class="subpro hidden absolute top-20 mt-1 right-12 w-40 h-20 border-2 border-black bg-white flex flex-col justify-center content-center items-center text-center">
-          <a class="h-10 p-1 w-full hover:bg-black hover:text-white hover:no-underline" href="">History
-            Order</a>
-          <a class="h-10 p-1 border-t-2 border-black w-full hover:bg-black hover:text-white hover:no-underline" href="">Log out</a>
-        </div>
+        <i class="fa-regular fa-user text-2xl my-6 ml-3 mr-12"></i>
       </div>
     </div>
   </nav>
@@ -73,9 +59,9 @@
         <d iv class="flex flex-col justify-center items-center content-center">
           <p class="text-5xl m-8">REGISTER</p>
           <form class="flex flex-col justify-center items-center content-center" method="post" action="save_register.php">
-            <div class="w-full grid grid-cols-2">
+          <div class="w-full grid grid-cols-2">
 
-
+            
               <div class="flex flex-col justify-center items-center content-center border-solid border-r-2 border-black">
                 <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="username" placeholder="Username" type="text">
                 <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="firstname" placeholder="First name" type="text">
@@ -83,39 +69,39 @@
                 <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="phone" placeholder="Phone" type="text">
                 <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="password" placeholder="Password" type="text">
               </div>
+              
+            
 
+            <div class="flex flex-col justify-center items-center content-center p-4">
+              <div class="w-full h-full border-2 border-solid border-black grid grid-rows-6 h-full p-4">
 
+                <textarea class="row-span-3 border-2 border-solid border-black mb-3 p-2" name="house" placeholder="House No. / Village" name="" id=""></textarea>
+                <div class="row-span-3">
+                  <div class="grid grid-cols-2 w-full">
 
-              <div class="flex flex-col justify-center items-center content-center p-4">
-                <div class="w-full h-full border-2 border-solid border-black grid grid-rows-6 h-full p-4">
-
-                  <textarea class="row-span-3 border-2 border-solid border-black mb-3 p-2" name="house" placeholder="House No. / Village" name="" id=""></textarea>
-                  <div class="row-span-3">
-                    <div class="grid grid-cols-2 w-full">
-
-                      <div class="flex flex-col justify-center items-center content-center py-1 mr-1">
-                        <select class="border-2 border-solid border-black w-full mb-5 h-10" name="province" id="province">
-                          <option>SELECT</option>
-                        </select>
-                        <select class="border-2 border-solid border-black w-full h-10" name="district" id="district">
-                          <option>SELECT</option>
-                        </select>
-                      </div>
-                      <div class="flex flex-col justify-center items-center content-center py-1 ml-1">
-                        <select class="border-2 border-solid border-black w-full mb-5 h-10" name="subdistrict" id="subdistrict">
-                          <option>SELECT</option>
-                        </select>
-                        <input class="h-10 border-2 border-solid border-black w-full p-2" placeholder="Post ID" type="text" name="postal">
-                      </div>
-
+                    <div class="flex flex-col justify-center items-center content-center py-1 mr-1">
+                      <select class="border-2 border-solid border-black w-full mb-5 h-10" name="province" id="province">
+                        <option>SELECT</option>
+                      </select>
+                      <select class="border-2 border-solid border-black w-full h-10" name="district" id="district">
+                        <option>SELECT</option>
+                      </select>
                     </div>
+                    <div class="flex flex-col justify-center items-center content-center py-1 ml-1">
+                      <select class="border-2 border-solid border-black w-full mb-5 h-10" name="subdistrict" id="subdistrict">
+                        <option>SELECT</option>
+                      </select>
+                      <input class="h-10 border-2 border-solid border-black w-full p-2" placeholder="Post ID" type="text" name="postal">
+                    </div>
+
                   </div>
-
                 </div>
-              </div>
 
+              </div>
             </div>
-            <button class="bg-black text-white px-7 py-3 mt-4 rounded-xl" type="submit">Register</button>
+
+          </div>
+          <button class="bg-black text-white px-7 py-3 mt-4 rounded-xl" type="submit">Register</button>
           </form>
       </div>
     </div>

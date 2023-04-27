@@ -3,9 +3,8 @@
 <?php
 session_start();
 $user_permission = $_SESSION['permission'];
-echo 'permission =' . $user_permission;
+echo 'permission ='.$user_permission;
 ?>
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,16 +23,25 @@ echo 'permission =' . $user_permission;
   <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 
 </head>
-<style>
-  input.profile:checked~.subpro {
-    display: flex;
-  }
-</style>
 
 <body class="flex flex-col justify-center items-center content-center overflow-x-hidden">
-  <?php
-  require_once 'menu.php';
-  ?>
+
+  <nav style="height: 85px; width: 100vw; border-bottom: 2px solid black;">
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%;">
+      <div style="padding-left: 1.25rem;">
+        <img style="width: 8rem; margin: 0.75rem;" src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png" alt="">
+      </div>
+      <div style="display: flex; flex-direction: row; justify-content: flex-end; align-items: flex-end; align-content: flex-end; padding-right: 2.5rem;">
+        <a style="font-size: 1.5rem; line-height: 2rem; margin: 1.5rem; font-weight: 600;" href="">SHOP</a>
+        <div style="position: relative;">
+          <input style="padding: 0.75rem; height: 3rem; width: 16rem; border: 2px solid black; border-radius: 1.5rem; margin: 1rem;" placeholder="search" type="text">
+          <i class="fa-solid fa-magnifying-glass" style="font-size: 1.25rem; line-height: 1.75rem; position: absolute; right: 2rem; top: 1.5rem;"></i>
+        </div>
+        <i class="fa-solid fa-cart-shopping" style="font-size: 1.5rem; line-height: 2rem; margin: 1.5rem;"></i>
+        <i class="fa-regular fa-user" style="font-size: 1.5rem; line-height: 2rem; margin: 1.5rem 3rem 1.5rem 0.75rem;"></i>
+      </div>
+    </div>
+  </nav>
 
   <!------HOME------->
 
