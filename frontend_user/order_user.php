@@ -136,6 +136,7 @@ if(!isset($add_ids) || !isset($totalPrice) || !isset($allprice)) {
                         $img_row = mysqli_fetch_assoc($img_result);
                         $img_link = $img_row["img_link"];
                         $_SESSION['add_price'] = $item['add_price'];
+                      
 
                       ?>
                         <div class="grid grid-cols-4 border-b border-solid border-black p-3">
@@ -169,6 +170,7 @@ if(!isset($add_ids) || !isset($totalPrice) || !isset($allprice)) {
                         <input type="hidden" name="add_name" value="<?php echo $item['add_name']; ?>">
                         <input type="hidden" name="add_price" value="<?php echo $item['add_price']; ?>">
                         <input type="hidden" name="order_price" value="<?php echo $allprice; ?>">
+
                         <button class="w-9/12 h-12 bg-black text-white mt-10 rounded-lg hover:bg-green-700">CONFIRM ORDER</button>
                     </div>
                   </form>

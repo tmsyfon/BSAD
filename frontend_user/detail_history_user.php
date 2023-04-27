@@ -65,7 +65,7 @@ $delivery = 50;
                 <div class="pr-1">
                     <div class="w-full h-full border-2 border-solid border-black grid grid-rows-2">
                         <div class="w-full h-full border-b-2 border-solid border-black py-1 px-2">TRACKING NUMBER</div>
-                        <div class="w-full h-full p-1"></div>
+                        <div class="w-full h-full p-1"><?php echo $row['tracking']; ?></div>
                     </div>
                 </div>
                 <div class="pl-1">
@@ -87,15 +87,16 @@ $delivery = 50;
             <!-- รายการสินค้า -->
             <div class="grid grid-cols-7 mt-1 border-b border-solid border-gray-300 p-2">
                 <?php
-                $sql1 = "SELECT vo.*, i.img_link FROM view_order vo INNER JOIN image i ON vo.add_id = i.add_id WHERE vo.id = '$user_id' ORDER BY vo.order_date DESC";
+                // $sql1 = "SELECT vo.*, i.img_link FROM view_order vo INNER JOIN image i ON vo.add_id = i.add_id WHERE vo.id = '$user_id' AND orders_id = '$orders_id' ORDER BY vo.order_date DESC LIMIT 1";
+                $sql1 = "SELECT * FROM view_order WHERE id = '$user_id' AND orders_id = '$orders_id'";
                 $result1 = mysqli_query($conn, $sql1);
                 while ($row1 = mysqli_fetch_assoc($result1)) {
-                  $img_link = $row1['img_link'];
+                  // $img_link = $row1['img_link'];
 
                 ?>
                 <div class="col-span-4 text-center grid grid-cols-7">
                     <div class="col-span-1">
-                        <img class="bg-gray-200 w-20 h-20" src="http://localhost/BSAD/img/<?php echo $img_link;?>" alt="">
+                        <!-- <img class="bg-gray-200 w-20 h-20" src="http://localhost/BSAD/img/<?php echo $img_link;?>" alt=""> -->
                     </div>
                     <div class="col-span-6 text-start">
                         <p><?php echo $row1['add_name']; ?></p>
@@ -135,7 +136,7 @@ $delivery = 50;
         </div>
         <!---->
 
-        <button class="p-3 text-xl rounded-xl bg-black text-white mt-6">back to home</button>
+        <button onclick="window.location.href = '/home.php';"class="p-3 text-xl rounded-xl bg-black text-white mt-6">back to home</button>
     </div>
 </body>
 </html>

@@ -82,7 +82,7 @@ if (isset($_GET['id'])) {
             type="text">
           <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
         </div>
-        <i class="fa-solid fa-cart-shopping text-2xl m-6" id="cart-icon" data-count="" ></i>
+        <i class="fa-solid fa-cart-shopping text-2xl m-6" id="cart-icon" data-count="" style="cursor: pointer;" ></i>
 
 
         <!-- ไอคอนรูปโปรไฟล์ -->
@@ -154,7 +154,7 @@ if (isset($_GET['id'])) {
       <div style="margin-left: 10%;">
         <h1 class="" style="font-size: 30px;">
           <b> <?php echo $row["add_name"]; ?></b>
-        </h1><br>
+        </h1> <?php if($user_permission == 'stock'){ ?><form method="post" action="/frontend_admin/edit_detail.php"> <input type="hidden" name="add_id" value="<?php echo $add_id; ?>"><button class="bg-black text-white rounded-xl p-3" type="submit">Edit</button></form> <?php } ?><br>
         <!----ราคาสินค้า----->
         <div class="" style="font-size: 20px;"> <strong>Price : </strong> <span class=""><?php echo '฿'.$row["add_price"];?></span></div><br>
 
@@ -193,10 +193,7 @@ if (isset($_GET['id'])) {
         </div>
         <p class="text-sm text-rose-400">* select your size</p><br>
         <!------จำนวนสินค้า------>
-        <div style="font-size: 20px;" class="flex flex-row">
-          <p><b>จำนวน</b></p>
-          <input type="number" class="border-2 border-black ml-3 w-20 text-center" min="1" value="<?php echo $add_amount; ?>">
-        </div><br>
+
 
         <button class="bg-black text-white rounded-xl p-3" id="add-to-cart" onclick="addToCart()">ADD TO CART</button>
 
@@ -222,6 +219,7 @@ if (isset($_GET['id'])) {
       },
       success: function(response) {
         alert(response);
+        location.reload(); //รีเฟรชหน้าเว็บไซต์
       }
     });
   }
@@ -261,11 +259,11 @@ $(document).ready(function() {
     e.preventDefault(); // ปิดการกระทำของลิงก์
 
     $.ajax({
-      url: '/BSAD/frontend_user/shop_cart.php',
+      url: '/frontend_user/shop_cart.php',
       type: 'POST',
       data: {session: JSON.stringify(<?php echo json_encode($_SESSION['cart']); ?>)},
       success: function(response) {
-        window.location.href = '/BSAD/frontend_user/shop_cart.php'; // โหลดหน้า shop_cart.php หลังจากส่งข้อมูลเสร็จสิ้น
+        window.location.href = '/frontend_user/shop_cart.php'; // โหลดหน้า shop_cart.php หลังจากส่งข้อมูลเสร็จสิ้น
       },
       error: function(jqXHR, textStatus, errorThrown) {
         console.log(textStatus, errorThrown);

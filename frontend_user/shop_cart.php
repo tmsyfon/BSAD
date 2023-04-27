@@ -98,10 +98,10 @@ require_once 'connect.php';
           <div class="col-span-2 pl-8 pt-2">
             <p class="text-xl"><?php echo $cartItem['name'] ?></p>
             <p class="text-md">SIZE : <?php echo $cartItem['size'] ?></p>
-            <button class="flex flex-row mt-20 delete-btn" data-id="<?php echo $cartItem['id'];?>">
+            <span class="flex flex-row mt-20 delete-btn" data-id="<?php echo $cartItem['id'];?>">
               <i class="fa-solid fa-trash-can fa-lg mt-3 mr-2" style="color: #343434;"></i>
               <p class="underline decoration-2 ">Delete</p>
-            </button>
+            </span>
           </div>
           <div class="col-span-2 p-4 grid grid-cols-3 text-center">
   <p class="mt-1.5">฿ <?php echo $cartItem['price']; ?></p>
@@ -145,14 +145,7 @@ function updateTotalPrice(input) {
 
     </script>
 
-        <div class="grid grid-cols-2 mt-3">
-          <div class="col-span-1">
-            <button class="rounded-none border-2 border-[#000000] w-32 h-10 mt-2 hover:text-white hover:bg-black">เลือกสินค้าต่อ</button>
-          </div>
-          <div class="col-span-1 flex justify-end content-end items-end">
-            <button class="rounded-none border-2 border-[#000000] w-32 h-10 mt-2 hover:text-white hover:bg-black">ลบสินค้าทั้งหมด</button>
-          </div>
-        </div>
+
 
     </div>
     <div class="col-span-2 p-4 flex flex-col justify-center items-center content-center">
@@ -172,9 +165,25 @@ function updateTotalPrice(input) {
         <button  id="order-btn" class="w-full text-center bg-black text-white h-11 mt-10 hover:text-black hover:bg-white hover:border-2 hover:border-black">ORDER</button>
       </div>
     </div>
-
-  </div>
 </form>
+
+<div class="grid grid-cols-2 mt-3">
+  <form action="/shop_list.php">
+  <div class="col-span-1">
+    <button class="rounded-none border-2 border-[#000000] w-32 h-10 mt-2 hover:text-white hover:bg-black">เลือกสินค้าต่อ</button>
+  </div>
+  </form>
+  <form action="clear_cart1.php">
+  <div class="col-span-1 flex justify-end content-end items-end">
+    <button class="rounded-none border-2 border-[#000000] w-32 h-10 mt-2 hover:text-white hover:bg-black" >ลบสินค้าทั้งหมด</button>
+  </div>
+  </form>
+</div>
+  </div>
+
+
+
+
 <?php
 
   // เก็บค่าตัวแปรใน session
@@ -183,6 +192,11 @@ function updateTotalPrice(input) {
   $_SESSION['allprice'] = $allprice;
   ?>
     <script>
+
+
+
+
+
     // ดักจับการคลิกปุ่ม ORDER
 const orderBtn = document.getElementById('order-btn');
 orderBtn.addEventListener('click', function() {

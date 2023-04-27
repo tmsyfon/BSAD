@@ -39,6 +39,9 @@ if (isset($_SESSION['user_id'])) {
 </head>
 
 <style>
+input.profile:checked~.subpro {
+  display: flex;
+}
   * {
     font-family: 'Kanit', sans-serif;
   }
@@ -66,22 +69,9 @@ if (isset($_SESSION['user_id'])) {
 </style>
 
 <body class="flex flex-col justify-center items-center content-center">
-  <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
-    <div class="grid grid-cols-2 w-full">
-      <div class="pl-5">
-        <img class="w-32 m-3" src="img/logo.png" alt="">
-      </div>
-      <div class="flex flex-row justify-end items-end content-end pr-10">
-        <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
-        <div class="relative">
-          <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search" type="text">
-          <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
-        </div>
-        <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
-        <i class="fa-regular fa-user text-2xl my-6 ml-3 mr-12"></i>
-      </div>
-    </div>
-  </nav>
+  <?php
+  require_once 'menu.php';
+  ?>
 
   <!-------------->
 
@@ -121,8 +111,7 @@ if (isset($_SESSION['user_id'])) {
   </label>
 </div>
 
-            <p class="text-lg my-2">amount</p>
-            <input type="number" value="1" class="w-2/12 h-9 border-2 border-solid border-black rounded-lg text-center text-xl" name="product_amount">
+            
             <p class="text-lg my-2">detail</p>
             <textarea class="p-4 w-full h-20 border-2 border-solid border-black mb-2" cols="30" rows="10" name="product_detail"></textarea>
             <div class="grid grid-cols-5 w-full my-2">

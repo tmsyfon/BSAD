@@ -77,10 +77,16 @@ require_once 'menu.php';
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
+                  $add_id = $row["add_id"];
+
+                  $img_query = "SELECT img_link FROM image WHERE add_id = $add_id LIMIT 1";
+                  $img_result = mysqli_query($conn, $img_query);
+                  $img_row = mysqli_fetch_assoc($img_result);
+                  $img_link = $img_row["img_link"];
             ?>
             <div class="w-full p-3 cursor-pointer">
               <div class="p-3 w-full h-80 border-black border-2 border-solid flex flex-col justify-center items-center content-center">
-                <img class="w-full h-64 mb-3 overflow-hidden" src="https://cdn.discordapp.com/attachments/1020724048889659442/1098322374346158150/pic1-1.jpg" alt="">
+                <img class="w-full h-64 mb-3 overflow-hidden" src="img/<?php echo $img_link;?>" alt="">
                 <p class="text-xl font-semibold"><?php echo $row["add_name"]; ?></p>
                 <p class="text-lg"><?php echo $row["add_price"]; ?></p>
               </div>
@@ -94,7 +100,7 @@ require_once 'menu.php';
           </div>
 
         </div>
-        <div class="carousel-item">
+        <!-- <div class="carousel-item">
 
           <div class="grid grid-cols-5 gap-3">
             <?php
@@ -103,10 +109,16 @@ require_once 'menu.php';
             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
+                  $add_id = $row["add_id"];
+
+                  $img_query = "SELECT img_link FROM image WHERE add_id = $add_id LIMIT 1";
+                  $img_result = mysqli_query($conn, $img_query);
+                  $img_row = mysqli_fetch_assoc($img_result);
+                  $img_link = $img_row["img_link"];
             ?>
             <div class="w-full p-3 cursor-pointer">
               <div class="p-3 w-full h-80 border-black border-2 border-solid flex flex-col justify-center items-center content-center">
-                <img class="w-full h-64 mb-3 overflow-hidden" src="https://cdn.discordapp.com/attachments/1020724048889659442/1098322374346158150/pic1-1.jpg" alt="">
+                <img class="w-full h-64 mb-3 overflow-hidden" src="img/<?php echo $img_link;?>" alt="">
                 <p class="text-xl font-semibold"><?php echo $row["add_name"]; ?></p>
                 <p class="text-lg"><?php echo $row["add_price"]; ?></p>
               </div>
@@ -120,34 +132,7 @@ require_once 'menu.php';
           </div>
 
         </div>
-        <div class="carousel-item">
-
-          <div class="grid grid-cols-5 gap-3">
-
-            <?php
-            // คำสั่ง SQL query เพื่อดึงข้อมูลจากตาราง products
-            $sql = "SELECT * FROM product ORDER BY add_id DESC LIMIT 5";
-            $result = mysqli_query($conn, $sql);
-            if (mysqli_num_rows($result) > 0) {
-                while($row = mysqli_fetch_assoc($result)) {
-            ?>
-            <div class="w-full p-3 cursor-pointer">
-              <div class="p-3 w-full h-80 border-black border-2 border-solid flex flex-col justify-center items-center content-center">
-                <img class="w-full h-64 mb-3 overflow-hidden" src="https://cdn.discordapp.com/attachments/1020724048889659442/1098322374346158150/pic1-1.jpg" alt="">
-                <p class="text-xl font-semibold"><?php echo $row["add_name"]; ?></p>
-                <p class="text-lg"><?php echo $row["add_price"]; ?></p>
-              </div>
-            </div>
-            <?php
-          }
-        }
-            ?>
-
-
-          </div>
-
-        </div>
-
+     -->
       </div>
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

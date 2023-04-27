@@ -3,16 +3,18 @@ session_start();
 require_once 'connect.php';
 // ตรวจสอบว่ามีการส่งค่า POST มาหรือไม่
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+  date_default_timezone_set('Asia/Bangkok'); // กำหนดโซนเวลาเป็น Asia/Bangkok
     $add_name = $_POST['add_name'];
     $add_price = $_POST['add_price'];
     $order_price = $_POST['order_price'];
     $address = $_POST['address'];
+
     $current_time = date('Y-m-d H:i:s');
     $user_id = $_SESSION['user_id'];
     $bank = $_POST['bank'];
     $id_list = $_SESSION['id_list'];
     $add_price2 = $_SESSION['add_price'];
+    $img_link = $_SESSION['img_link'];
 
 
 
@@ -36,7 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
        }
      }
 
-
+     unset($_SESSION['img_link']);
+     unset($_SESSION['add_ids']);
+     unset($_SESSION['totalPrice']);
+     unset($_SESSION['allprice']);
+     unset($_SESSION['cart']);
      echo "<script>alert('Confirm order success!')</script>";
      echo "<script>window.location.href='history_user.php'</script>";
     } else {

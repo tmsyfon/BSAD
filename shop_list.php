@@ -3,7 +3,8 @@
 <?php
 session_start();
 $user_permission = $_SESSION['permission'];
-echo 'permission ='.$user_permission;
+$search = $_POST['search'];
+echo 'permission ='.$search;
 require_once 'inc/connect.php';
  ?>
 <head>
@@ -123,8 +124,13 @@ input.profile:checked~.subpro {
 <?php
 require_once 'menu.php';
 // คำสั่ง SQL query เพื่อดึงข้อมูลจากตาราง products
+if($search != ''){
+  $sql = "SELECT * FROM product WHERE add_name LIKE '%$search%'";
+  $result = mysqli_query($conn, $sql);
+} else {
 $sql = "SELECT * FROM product";
 $result = mysqli_query($conn, $sql);
+}
 ?>
     <div class="container py-10 grid grid-cols-8">
 
@@ -134,20 +140,20 @@ $result = mysqli_query($conn, $sql);
 
                 <div class="mt-5">
                     <input id="brand" type="checkbox" name="menu" class="menu hidden" />
-                    <label for="brand" class="cursor-pointer"><b>BRAND</b></label>
+                    <label for="brand" class="cursor-pointer"><b>ERA</b></label>
 
                     <div class="submenu hidden flex flex-col">
                         <div>
                             <input id="brand1" class="checked:bg-gray-300" type="checkbox">
-                            <label for="brand1">brand1</label>
+                            <label for="brand1">1970S</label>
                         </div>
                         <div>
                             <input id="brand1" class="checked:bg-gray-300" type="checkbox">
-                            <label for="brand1">brand1</label>
+                            <label for="brand1">1980S</label>
                         </div>
                         <div>
                             <input id="brand1" class="checked:bg-gray-300" type="checkbox">
-                            <label for="brand1">brand1</label>
+                            <label for="brand1">1990S</label>
                         </div>
                     </div>
                 </div>
@@ -210,7 +216,9 @@ $result = mysqli_query($conn, $sql);
                         </div>
                     </div>
                 </div>
-
+                <div class="mt-5">
+                <button class="bg-black text-white rounded-xl p-3">search</button>
+              </div>
             </div>
         </div>
 
@@ -242,7 +250,7 @@ if (mysqli_num_rows($result) > 0) {
                         <img class="w-full h-64 mb-3 overflow-hidden" src="img/<?php echo $img_link;?>" alt="">
 
                         <p class="text-xl font-semibold"><?php echo $row["add_name"]; ?></p>
-                        <p class="text-lg"><?php echo $row["add_price"]; ?></p>
+                        <p class="text-lg"><?php echo '฿'.$row["add_price"]; ?></p>
                     </div>
                 </div>
 <?php

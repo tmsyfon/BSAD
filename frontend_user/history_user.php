@@ -2,7 +2,9 @@
 <?php
 session_start();
 $user_id = $_SESSION['user_id'];
+$user_permission = $_SESSION['permission'];
 require_once 'connect.php';
+echo 'test= '. $user_permission;
 ?>
 
 <html lang="en">
@@ -45,7 +47,11 @@ require_once 'connect.php';
         <?php
         // ส่วนของการเชื่อมต่อฐานข้อมูลจะไม่นำมาแสดงในตัวอย่างนี้
 // คิวรี่ข้อมูลจากตาราง orders
+if($user_permission =='customer'){
 $sql = "SELECT * FROM orders WHERE id = '$user_id' ORDER BY order_date DESC";
+} else if($user_permission == 'sales') {
+  $sql = "SELECT * FROM orders ORDER BY order_date DESC";
+}
 $result = mysqli_query($conn, $sql);
       ?>
         <table id="order-table"class="w-full border-collapse border border-gray-400">
@@ -64,7 +70,7 @@ $result = mysqli_query($conn, $sql);
             while ($row = mysqli_fetch_assoc($result)) { // ใช้งาน mysqli_fetch_assoc() เมื่อคิวรี่สำเร็จ
 
           ?>
-          <tr class="border border-gray-400" onclick="window.location.href='detail_history_user.php?order_id=<?php echo $row["orders_id"] ?>'" style="cursor: pointer;">
+          <tr class="border border-gray-400" onclick="window.location.href='<?php if($user_permission == 'customer'){ ?>/frontend_user/detail_history_user.php?order_id=<?php echo $row["orders_id"] ?> <?php } else if($user_permission == 'sales') {?>/frontend_admin/manage_order.php?order_id=<?php echo $row["orders_id"] ?> <?php } ?>'" style="cursor: pointer;">
   <td class="text-center py-2"><?php echo $row["order_date"] ?></td>
   <td class="text-center py-2 col-span-4"><?php echo $row["orders_id"] ?></td>
   <td class="text-center py-2"><?php echo $row["order_price"] ?></td>
@@ -83,7 +89,7 @@ mysqli_close($conn);
         <!-- ส่วนของการวนลูปแสดงผลข้อมูลในตารางจะต้องเพิ่มเองตามโค้ดที่มีอยู่ -->
       </tbody>
     </table>
-        <button class="p-3 text-xl rounded-xl bg-black text-white mt-8">back to home</button>
+        <button onclick="window.location.href = '/home.php';" class="p-3 text-xl rounded-xl bg-black text-white mt-8">back to home</button>
     </div>
     <script>
   const orderTable = document.getElementById('order-table');
@@ -91,6 +97,15 @@ mysqli_close($conn);
 
   rows.forEach(row => {
     row.addEventListener('click', () => {
+      // เช็ค user permission
+     <?php
+       // ตรวจสอบค่า $user_permission และกำหนด url ของหน้าที่จะไป
+       if ($user_permission === 'sales') {
+         $url = 'detail_history_user.php';
+       } elseif ($user_permission === 'customer') {
+         $url = 'manage_order.php';
+       }
+     ?>
       // เปลี่ยนเคอร์เซอร์แถวที่ถูกคลิก
       rows.forEach(row => {
         row.style.backgroundColor = '';
@@ -99,7 +114,7 @@ mysqli_close($conn);
 
       // ส่งค่า order_id ไปยังหน้าอื่น
       const orderId = row.id.split('-')[1];
-      window.location.href = `detail_history_user.php?order_id=${orderId}`;
+      window.location.href = `<?php echo $url ?>?order_id=${orderId}`;
     });
   });
 </script>
