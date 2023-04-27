@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+$user_permission = $_SESSION['permission'];
+require_once 'inc/connect.php';
+ ?>
 
 <head>
   <meta charset="UTF-8">
@@ -12,25 +17,15 @@
   <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
   <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 </head>
-
+<style>
+  input.profile:checked~.subpro {
+    display: flex;
+  }
+</style>
 <body class="flex flex-col justify-center items-center content-center">
-  <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
-    <div class="grid grid-cols-2 w-full">
-      <div class="pl-5">
-        <img class="w-32 m-3" src="img/logo.png" alt="">
-      </div>
-      <div class="flex flex-row justify-end items-end content-end pr-10">
-        <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
-        <div class="relative">
-          <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search"
-            type="text">
-          <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
-        </div>
-        <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
-        <i class="fa-regular fa-user text-2xl my-6 ml-3 mr-12"></i>
-      </div>
-    </div>
-  </nav>
+  <?php
+  require_once 'menu.php';
+  ?>
 
   <!------Product------->
   <div class="grid grid-cols-2" style="margin-top: 3%;">
@@ -39,11 +34,17 @@
     <div class="pl-20">
       <img src="https://placehold.it/150x80?text=IMAGE" alt="" style="width: 100%; height: 100%;">
     </div>
-
+    <?php
+    // คำสั่ง SQL query เพื่อดึงข้อมูลจากตาราง products
+    $sql = "SELECT * FROM product";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        while($row = mysqli_fetch_assoc($result)) {
+    ?>
     <!----ชื่อสินค้า------>
     <div style="margin-left: 10%;">
       <h1 class="" style="font-size: 30px;">
-        <b> Leopard Shirt Dress</b>
+        <b> <?php echo $row["add_name"]; ?></b>
       </h1><br>
       <!----ราคาสินค้า----->
       <div class="" style="font-size: 20px;"> <strong>Price : </strong> <span class=""> $300.00</span></div><br>
@@ -53,7 +54,7 @@
         <div class="" style="font-size: 20px;"> <strong>Size : </strong></div>
 
         <button class="bg-black text-white rounded-xl"
-          style="width:90%; height: 100%; background-color:rgb(189, 186, 186)" width:90%; height: 100%;'">S</button>
+        style="width:90%; height: 100%; background-color:rgb(189, 186, 186)" width:90%; height: 100%;'">S</button>
         <button class="bg-black text-white rounded-xl"
           style="width:90%; height: 100%; background-color:rgb(189, 186, 186)" width:90%; height: 100%;'">M</button>
         <button class="bg-black text-white rounded-xl"
@@ -70,6 +71,11 @@
       <!-----ปุ่มเพิ่มลงตะกร้า------->
       <button class="bg-black text-white rounded-xl" style="width:25%; height: 10%;">เพิ่มลงตระกร้า</button>
     </div>
+    <?php
+  }
+}
+    ?>
+
   </div>
   <!-------รูป4รูปของสินค้า---------->
   <div class="grid grid-cols-2" style="margin-top: 3%;">

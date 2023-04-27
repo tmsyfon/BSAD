@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+$user_permission = $_SESSION['permission'];
+echo 'permission ='.$user_permission;
+require_once 'inc/connect.php';
+ ?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +17,11 @@
     <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 </head>
+
 <style>
+input.profile:checked~.subpro {
+  display: flex;
+}
     input.menu:checked~.submenu {
     display: flex;
     }
@@ -110,24 +119,13 @@
 
 </style>
 <body class="flex flex-col justify-center items-center content-center">
-    <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
-        <div class="grid grid-cols-2 w-full">
-            <div class="pl-5">
-                <img class="w-32 m-3" src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png" alt="">
-            </div>
-            <div class="flex flex-row justify-end items-end content-end pr-10">
-                <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
-                <div class="relative">
-                    <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search"
-                        type="text">
-                    <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
-                </div>
-                <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
-                <i class="fa-regular fa-user text-2xl my-6 ml-3 mr-12"></i>
-            </div>
-        </div>
-    </nav>
 
+<?php
+require_once 'menu.php';
+// คำสั่ง SQL query เพื่อดึงข้อมูลจากตาราง products
+$sql = "SELECT * FROM product";
+$result = mysqli_query($conn, $sql);
+?>
     <div class="container py-10 grid grid-cols-8">
 
         <div class="col-span-2">
@@ -136,8 +134,8 @@
 
                 <div class="mt-5">
                     <input id="brand" type="checkbox" name="menu" class="menu hidden" />
-                    <label for="brand" class="cursor-pointer"><b>BRAND</b></label>                        
-                   
+                    <label for="brand" class="cursor-pointer"><b>BRAND</b></label>
+
                     <div class="submenu hidden flex flex-col">
                         <div>
                             <input id="brand1" class="checked:bg-gray-300" type="checkbox">
@@ -156,8 +154,8 @@
 
                 <div class="mt-5">
                     <input id="price" type="checkbox" name="menu" class="menu hidden" />
-                    <label for="price" class="cursor-pointer"><b>PRICE</b></label>                        
-               
+                    <label for="price" class="cursor-pointer"><b>PRICE</b></label>
+
                     <div class="submenu hidden flex flex-col">
                         <p> 0 - <output id="value">500</output></p>
                         <input id="price" type="range" max="9000" value="500" list="markers" oninput="show(this)">
@@ -187,8 +185,8 @@
 
                 <div class="mt-5">
                     <input id="size" type="checkbox" name="menu" class="menu hidden" />
-                    <label for="size" class="cursor-pointer"><b>SIZE</b></label>                        
-               
+                    <label for="size" class="cursor-pointer"><b>SIZE</b></label>
+
                     <div class="submenu hidden flex flex-col">
                         <div>
                             <input id="brand1" class="checked:bg-gray-300" type="checkbox">
@@ -223,20 +221,41 @@
             </div>
 
             <div class="grid grid-cols-4 mt-6 gap-5">
+<?php
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+        $add_id = $row["add_id"]; // สร้างตัวแปร add_id และกำหนดค่าเป็น add_id ของแถวปัจจุบัน
 
+        // ดึงข้อมูลภาพจากตาราง images โดยใช้ add_id เป็นคีย์เชื่อมโยง และใช้ LIMIT 1 เพื่อดึงแค่ภาพเดียว
+        $img_query = "SELECT img_link FROM image WHERE add_id = $add_id LIMIT 1";
+        $img_result = mysqli_query($conn, $img_query);
+        $img_row = mysqli_fetch_assoc($img_result);
+        $img_link = $img_row["img_link"];
+
+
+        // สร้างลิงก์และส่งค่า id ไปยังหน้าอื่น
+        echo '<a href="product.php?id=' . $add_id . '">';
+?>
                 <div class="w-full cursor-pointer">
                     <div class="p-3 w-full h-80 border-black border-2 border-solid flex flex-col justify-center items-center content-center">
-                        <img class="w-full h-64 mb-3 overflow-hidden" src="https://cdn.discordapp.com/attachments/1020724048889659442/1098322374346158150/pic1-1.jpg" alt="">
-                        <p class="text-xl font-semibold">Name</p>
-                        <p class="text-lg">price</p>
+
+                        <img class="w-full h-64 mb-3 overflow-hidden" src="img/<?php echo $img_link;?>" alt="">
+
+                        <p class="text-xl font-semibold"><?php echo $row["add_name"]; ?></p>
+                        <p class="text-lg"><?php echo $row["add_price"]; ?></p>
                     </div>
                 </div>
-                
+<?php
+echo '</a>';
+}
+}
+
+?>
             </div>
-            
+
         </div>
-        
-        
+
+
     </div>
 
 </body>

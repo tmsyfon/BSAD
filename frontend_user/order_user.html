@@ -1,6 +1,7 @@
- <!DOCTYPE html>
- <html lang="en">
- <head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,8 @@
 
     <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
- </head>
- <style>
+</head>
+<style>
     input.ksk:checked~.img_ksk {
         opacity: 100%;
     }
@@ -26,12 +27,19 @@
     input.bkk:checked~.img_bkk {
         opacity: 100%;
     }
- </style>
- <body class="flex flex-col justify-center items-center content-center">
+
+    input.profile:checked~.subpro {
+        display: flex;
+    }
+</style>
+
+<body class="flex flex-col justify-center items-center content-center">
     <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
         <div class="grid grid-cols-2 w-full">
             <div class="pl-5">
-                <img class="w-32 m-3" src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png" alt="">
+                <img class="w-32 m-3"
+                    src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png"
+                    alt="">
             </div>
             <div class="flex flex-row justify-end items-end content-end pr-10">
                 <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
@@ -41,7 +49,19 @@
                     <i class="text-xl fa-solid fa-magnifying-glass absolute right-8 top-6"></i>
                 </div>
                 <i class="fa-solid fa-cart-shopping text-2xl m-6"></i>
-                <i class="fa-regular fa-user text-2xl my-6 ml-3 mr-12"></i>
+                <!-- ไอคอนรูปโปรไฟล์ -->
+                <input type="checkbox" class="profile hidden" id="profile" name="profile">
+                <label for="profile" class="m-3 mb-6">
+                    <i class="fa-regular fa-user" style="font-size: 1.5rem; line-height: 2rem;"></i>
+                </label>
+                <!-- submenu ที่ยื่นออกมา -->
+                <div
+                    class="subpro hidden absolute top-20 mt-1 right-12 w-40 h-20 border-2 border-black bg-white flex flex-col justify-center content-center items-center text-center">
+                    <a class="h-10 p-1 w-full hover:bg-black hover:text-white hover:no-underline" href="">History
+                        Order</a>
+                    <a class="h-10 p-1 border-t-2 border-black w-full hover:bg-black hover:text-white hover:no-underline"
+                        href="">Log out</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -64,22 +84,30 @@
                 <div class="flex flex-row">
                     <input id="ksk" type="radio" name="bank" class="ksk hidden">
                     <label for="ksk" class="border-2 border-black w-28 m-3 img_ksk opacity-50">
-                        <img class="cursor-pointer w-full" src="https://cdn.discordapp.com/attachments/1020724048889659442/1099722223004160050/KBANK-LOGO.png" alt="">
+                        <img class="cursor-pointer w-full"
+                            src="https://cdn.discordapp.com/attachments/1020724048889659442/1099722223004160050/KBANK-LOGO.png"
+                            alt="">
                     </label>
 
                     <input id="ktb" type="radio" name="bank" class="ktb hidden">
                     <label for="ktb" class="border-2 border-black w-28 m-3 img_ktb opacity-50">
-                        <img class="cursor-pointer w-full" src="https://cdn.discordapp.com/attachments/1020724048889659442/1099722223209685112/IMG_35719_20201006093532000000.png" alt="">
+                        <img class="cursor-pointer w-full"
+                            src="https://cdn.discordapp.com/attachments/1020724048889659442/1099722223209685112/IMG_35719_20201006093532000000.png"
+                            alt="">
                     </label>
-                    
+
                     <input id="scb" type="radio" name="bank" class="scb hidden">
                     <label for="scb" class="border-2 border-black w-28 m-3 img_scb opacity-50">
-                        <img class="cursor-pointer w-full" src="https://cdn.discordapp.com/attachments/1020724048889659442/1099722223465529354/siam-commercial-bank-scb-logo.png" alt="">
+                        <img class="cursor-pointer w-full"
+                            src="https://cdn.discordapp.com/attachments/1020724048889659442/1099722223465529354/siam-commercial-bank-scb-logo.png"
+                            alt="">
                     </label>
 
                     <input id="bkk" type="radio" name="bank" class="bkk hidden">
                     <label for="bkk" class="border-2 border-black w-28 m-3 img_bkk opacity-50">
-                        <img class="cursor-pointer w-full" src="https://cdn.discordapp.com/attachments/1020724048889659442/1099722222765080707/ad8e2ee0c8e2d7ecc680af556d2c83a0.png" alt="">
+                        <img class="cursor-pointer w-full"
+                            src="https://cdn.discordapp.com/attachments/1020724048889659442/1099722222765080707/ad8e2ee0c8e2d7ecc680af556d2c83a0.png"
+                            alt="">
                     </label>
                 </div>
             </div>
@@ -113,8 +141,9 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <div class="w-full h-48 bg-gray-300 mt-3 p-5 items-center content-center justify-center flex flex-col">
+
+                    <div
+                        class="w-full h-48 bg-gray-300 mt-3 p-5 items-center content-center justify-center flex flex-col">
                         <div class="w-full grid grid-cols-2">
                             <div class="text-start">
                                 <p>Total</p>
@@ -127,12 +156,14 @@
                                 <p>baht</p>
                             </div>
                         </div>
-                        <button class="w-9/12 h-12 bg-black text-white mt-10 rounded-lg hover:bg-green-700">CONFIRM ORDER</button>
+                        <button class="w-9/12 h-12 bg-black text-white mt-10 rounded-lg hover:bg-green-700">CONFIRM
+                            ORDER</button>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
- </body>
- </html>
+</body>
+
+</html>
