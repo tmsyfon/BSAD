@@ -2,9 +2,23 @@
 <html lang="en">
 <?php
 session_start();
+<<<<<<< HEAD
+
+require_once 'inc/connect.php';
+
+if (isset($_SESSION['permission'])) {
+    $user_permission = $_SESSION['permission'];
+} else {
+    $user_permission = null; // หรือให้มีค่าเท่ากับค่าอื่น ๆ ที่เหมาะสมในการใช้งานของคุณ
+}
+=======
 $user_permission = $_SESSION['permission'];
 echo 'permission ='.$user_permission;
 require_once 'inc/connect.php';
+<<<<<<< Updated upstream
+=======
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
 ?>
 <head>
   <meta charset="UTF-8">
@@ -45,13 +59,13 @@ require_once 'menu.php';
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1099792992463757354/1.png?width=1250&height=562" alt="First slide">
+        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1100854138260181142/2.jpg?width=1440&height=461" alt="First slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1099792992690262096/2.png?width=1250&height=562" alt="Second slide">
+        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1100854138457301133/3.jpg?width=1440&height=461" alt="Second slide">
       </div>
       <div class="carousel-item">
-        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1099792992958689280/3.png?width=1250&height=562" alt="Third slide">
+        <img class="d-block" style="height: 450px;" src="https://media.discordapp.net/attachments/1068182987411296347/1100854138683789363/1.jpg?width=1440&height=461" alt="Third slide">
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">

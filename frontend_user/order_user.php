@@ -136,17 +136,40 @@ if(!isset($add_ids) || !isset($totalPrice) || !isset($allprice)) {
                         $img_row = mysqli_fetch_assoc($img_result);
                         $img_link = $img_row["img_link"];
                         $_SESSION['add_price'] = $item['add_price'];
+<<<<<<< Updated upstream
                       
 
                       ?>
                         <div class="grid grid-cols-4 border-b border-solid border-black p-3">
                             <img class="bg-gray-200 w-32 h-32 col-span-1" src="http://localhost/BSAD/img/<?php echo $img_link;?>" alt="">
                             <div class="col-span-3">
+=======
+<<<<<<< HEAD
+
+
+                      ?>
+                        <div class="grid grid-cols-4 border-b border-solid border-black p-3">
+                            <img class="bg-gray-200 w-32 h-32 col-span-1" src="http://localhost/img/<?php echo $img_link;?>" alt="">
+                            <div class="col-span-3">
+                                <p class="text-end"><?php echo $item['add_name'];?></p>
+                                <!-- <p>amount</p> -->
+                                <!-- <p><?php echo $item['add_price'];?></p> -->
+                                <br>
+                                <p class="text-end"><b>total : <?php echo $item['add_price'];?></b></p>
+=======
+                      
+
+                      ?>
+                        <div class="grid grid-cols-4 border-b border-solid border-black p-3">
+                            <img class="bg-gray-200 w-32 h-32 col-span-1" src="http://localhost/BSAD/img/<?php echo $img_link;?>" alt="">
+                            <div class="col-span-3">
+>>>>>>> Stashed changes
                                 <p><?php echo $item['add_name'];?></p>
                                 <p>amount</p>
                                 <p><?php echo $item['add_price'];?></p>
                                 <br>
                                 <p class="text-end"><b>total : </b></p>
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
                             </div>
                         </div>
                         <?php

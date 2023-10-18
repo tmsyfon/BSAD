@@ -90,7 +90,15 @@ require_once 'connect.php';
               $img_link = $img_row["img_link"];
               ?>
               <div class="col-span-1 w-44 h-44 border-2 border-black">
+<<<<<<< Updated upstream
                 <img src="http://localhost/BSAD/img/<?php echo $img_link; ?>" class="col-span-1 w-44 h-44 border-2 border-[#000000]" alt="">
+=======
+<<<<<<< HEAD
+                <img src="http://localhost/img/<?php echo $img_link; ?>" class="col-span-1 w-44 h-44 border-2 border-[#000000]" alt="">
+=======
+                <img src="http://localhost/BSAD/img/<?php echo $img_link; ?>" class="col-span-1 w-44 h-44 border-2 border-[#000000]" alt="">
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
               </div>
               <div class="col-span-2 pl-8 pt-2">
                 <p class="text-xl"><?php echo $cartItem['name'] ?></p>

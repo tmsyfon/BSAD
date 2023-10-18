@@ -61,7 +61,7 @@
           <form class="flex flex-col justify-center items-center content-center" method="post" action="save_register.php">
           <div class="w-full grid grid-cols-2">
 
-            
+
               <div class="flex flex-col justify-center items-center content-center border-solid border-r-2 border-black">
                 <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="username" placeholder="Username" type="text">
                 <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="firstname" placeholder="First name" type="text">
@@ -69,8 +69,8 @@
                 <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="phone" placeholder="Phone" type="text">
                 <input class="p-4 m-2 w-10/12 h-11 border-2 border-solid border-black" name="password" placeholder="Password" type="text">
               </div>
-              
-            
+
+
 
             <div class="flex flex-col justify-center items-center content-center p-4">
               <div class="w-full h-full border-2 border-solid border-black grid grid-rows-6 h-full p-4">
@@ -83,7 +83,7 @@
                       <select class="border-2 border-solid border-black w-full mb-5 h-10" name="province" id="province">
                         <option>SELECT</option>
                       </select>
-                      <select class="border-2 border-solid border-black w-full h-10" name="district" id="district">
+                      <select class="border-2 border-solid border-black w-full h-10" name="district" id="district" style="margin-top: 10px;">
                         <option>SELECT</option>
                       </select>
                     </div>

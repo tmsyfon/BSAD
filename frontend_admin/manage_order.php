@@ -18,6 +18,14 @@ require_once 'connect.php';
     <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 </head>
 <body class="flex flex-col justify-center items-center content-center">
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<?php
+require_once '../menu.php';
+?>
+=======
+>>>>>>> Stashed changes
     <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
         <div class="grid grid-cols-2 w-full">
             <div class="pl-5">
@@ -35,6 +43,10 @@ require_once 'connect.php';
             </div>
         </div>
     </nav>
+<<<<<<< Updated upstream
+=======
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
 
     <div class="container flex flex-col justify-start items-start content-start p-10">
         <div class="w-full grid grid-cols-2">
@@ -89,8 +101,26 @@ require_once 'connect.php';
                     <div class="w-full col-span-3 flex flex-row">
                       <form action="save-data.php" method="post">
                         <input type="hidden" name="orders_id" value="<?php echo $orders_id; ?>">
+<<<<<<< Updated upstream
                         <input type="text" name="tracking" class="border-2 h-10 border-black p-3" value="">
                         <button type="submit" class="bg-black text-white rounded-lg w-20 ml-2 hover:bg-white hover:text-black hover:border-2 hover:border-black">submit</button>
+=======
+<<<<<<< HEAD
+                        <?php
+                        $sql6 = "SELECT * FROM orders WHERE orders_id = '$orders_id'";
+                        $result6 = mysqli_query($conn, $sql6);
+                        while ($row6 = mysqli_fetch_assoc($result6)) {
+
+                          $tracking = $row6['tracking'];
+                        ?>
+                        <input type="text" name="tracking" class="border-2 h-10 border-black p-3" value="<?php echo $tracking; ?>">
+                        <button type="submit" class="bg-black text-white rounded-lg w-20 ml-2 hover:bg-white hover:text-black hover:border-2 hover:border-black">submit</button>
+                      <?php } ?>
+=======
+                        <input type="text" name="tracking" class="border-2 h-10 border-black p-3" value="">
+                        <button type="submit" class="bg-black text-white rounded-lg w-20 ml-2 hover:bg-white hover:text-black hover:border-2 hover:border-black">submit</button>
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
                       </form>
                     </div>
                 </div>
@@ -101,9 +131,21 @@ require_once 'connect.php';
                     <div class="w-full col-span-1">
                         <p><?php echo $order_date; ?></p>
                     </div>
+<<<<<<< Updated upstream
                     <div class="w-full col-span-2 flex flex-row tems-end content-end justify-end">
                         <div class="w-36 h-10 rounded-xl bg-green-600 text-center items-center content-center justify-center flex flex-col text-white">status paymernt</div>
                     </div>
+=======
+<<<<<<< HEAD
+                    <!-- <div class="w-full col-span-2 flex flex-row tems-end content-end justify-end">
+                        <div class="w-36 h-10 rounded-xl bg-green-600 text-center items-center content-center justify-center flex flex-col text-white">status paymernt</div>
+                    </div> -->
+=======
+                    <div class="w-full col-span-2 flex flex-row tems-end content-end justify-end">
+                        <div class="w-36 h-10 rounded-xl bg-green-600 text-center items-center content-center justify-center flex flex-col text-white">status paymernt</div>
+                    </div>
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
                 </div>
             </div>
 
@@ -122,12 +164,34 @@ require_once 'connect.php';
                       $result1 = mysqli_query($conn, $sql1);
                       $total_price = 0;
                       while ($row1 = mysqli_fetch_assoc($result1)) {
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+                        $add_id = $row1['add_id'];
+=======
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
                         $add_name = $row1['add_name'];
                         $add_price = $row1['add_price'];
                         $total_price += $add_price; // เพิ่ม $add_price เข้าไปใน $total_price
                       ?>
                         <div class="grid grid-cols-7 border-b border-solid border-black p-3 text-center">
+<<<<<<< Updated upstream
                             <img class="bg-gray-200 w-24 h-24 col-span-1" src="" alt="">
+=======
+<<<<<<< HEAD
+                            <?php
+                            $img_query = "SELECT img_link FROM image WHERE add_id = $add_id LIMIT 1";
+                            $img_result = mysqli_query($conn, $img_query);
+                            $img_row = mysqli_fetch_assoc($img_result);
+                            $img_link = $img_row["img_link"];?>
+
+                            <img class="bg-gray-200 w-24 h-24 col-span-1" src="/img/<?php echo $img_link;?>" alt="">
+
+=======
+                            <img class="bg-gray-200 w-24 h-24 col-span-1" src="" alt="">
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
                             <div class="col-span-4 text-center items-center content-center justify-center flex"><?php echo $add_name; ?></div>
                             <div class="col-span-1 text-center items-center content-center justify-center flex">1</div>
                             <div class="col-span-1 text-center items-center content-center justify-center flex"><?php echo $add_price; ?></div>
@@ -146,12 +210,41 @@ require_once 'connect.php';
                                 <p><?php echo $total_price; ?></p>
                             </div>
                         </div>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+
+                        <div class="w-full col-span-3 flex flex-row tems-start content-start justify-start">
+                          <input type="hidden" name="orders_id" value="<?php echo $_GET['order_id']; ?>">
+                            <select class="border-2 border-black w-9/12 h-10" name="status" id="">
+                              <?php
+                              $sql8 = "SELECT * FROM orders WHERE orders_id = '$orders_id'";
+                              $result8 = mysqli_query($conn, $sql8);
+                              while ($row6 = mysqli_fetch_assoc($result8)) {
+
+                                $status = $row6['status'];
+                                if($status == 'pending'){
+                              ?>
+                                <option value="pending">pending</option>
+                                <option value="complete">complete</option>
+                              <?php } else { ?>
+                                <option value="complete">complete</option>
+                                <option value="pending">pending</option>
+
+
+                              <?php } } ?>
+=======
+>>>>>>> Stashed changes
                     
                         <div class="w-full col-span-3 flex flex-row tems-start content-start justify-start">
                           <input type="hidden" name="orders_id" value="<?php echo $_GET['order_id']; ?>">
                             <select class="border-2 border-black w-9/12 h-10" name="status" id="">
                                 <option value="pending">pending</option>
                                 <option value="complete">complete</option>
+<<<<<<< Updated upstream
+=======
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
                             </select>
                         </div>
                         <button class="w-32 h-12 bg-black text-white mt-10 rounded-lg hover:bg-neutral-500">บันทึก</button>

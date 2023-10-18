@@ -17,8 +17,18 @@ $product_amount = mysqli_real_escape_string($conn, $product_amount);
 $product_detail = mysqli_real_escape_string($conn, $product_detail);
 
 // เพิ่มข้อมูลใหม่ลงในตารางสินค้า
+<<<<<<< Updated upstream
 $sql = "INSERT INTO product (add_name, add_price, add_size, add_detail)
 VALUES ('$product_name', '$product_price', '$product_size', '$product_detail')";
+=======
+<<<<<<< HEAD
+$sql = "INSERT INTO product (add_name, add_price, add_size, add_amount, add_detail)
+VALUES ('$product_name', '$product_price', '$product_size', '$product_amount', '$product_detail')";
+=======
+$sql = "INSERT INTO product (add_name, add_price, add_size, add_detail)
+VALUES ('$product_name', '$product_price', '$product_size', '$product_detail')";
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
 
 if ($conn->query($sql) === TRUE) {
   // รับค่า id ล่าสุดที่ถูกเพิ่มเข้าไปในตาราง product

@@ -4,7 +4,15 @@ session_start();
 $user_id = $_SESSION['user_id'];
 $user_permission = $_SESSION['permission'];
 require_once 'connect.php';
+<<<<<<< Updated upstream
 echo 'test= '. $user_permission;
+=======
+<<<<<<< HEAD
+// echo 'test= '. $user_permission;
+=======
+echo 'test= '. $user_permission;
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
 ?>
 
 <html lang="en">
@@ -21,6 +29,14 @@ echo 'test= '. $user_permission;
     <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
 </head>
 <body class="flex flex-col justify-center items-center content-center">
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<?php
+require_once '../menu.php';
+?>
+=======
+>>>>>>> Stashed changes
     <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
         <div class="grid grid-cols-2 w-full">
             <div class="pl-5">
@@ -38,6 +54,10 @@ echo 'test= '. $user_permission;
             </div>
         </div>
     </nav>
+<<<<<<< Updated upstream
+=======
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
 
     <div class="container p-10 flex flex-col justify-center items-center content-center">
         <div class="w-full grid grid-cols-9 mb-10">
@@ -58,7 +78,15 @@ $result = mysqli_query($conn, $sql);
       <thead>
         <tr class="bg-gray-300">
           <th class="text-center py-2" style="width: 15%;">วันที่สั่งซื้อ</th>
+<<<<<<< Updated upstream
           <th class="text-center py-2 col-span-4">เลขใบสั่งซื้อ</th>
+=======
+<<<<<<< HEAD
+          <th class="text-center py-2 col-span-4">Tracking NO.</th>
+=======
+          <th class="text-center py-2 col-span-4">เลขใบสั่งซื้อ</th>
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
           <th class="text-center py-2 bg-gray-300">ราคารวม</th>
           <th class="text-center py-2">สถานะ</th>
         </tr>
@@ -72,7 +100,15 @@ $result = mysqli_query($conn, $sql);
           ?>
           <tr class="border border-gray-400" onclick="window.location.href='<?php if($user_permission == 'customer'){ ?>/frontend_user/detail_history_user.php?order_id=<?php echo $row["orders_id"] ?> <?php } else if($user_permission == 'sales') {?>/frontend_admin/manage_order.php?order_id=<?php echo $row["orders_id"] ?> <?php } ?>'" style="cursor: pointer;">
   <td class="text-center py-2"><?php echo $row["order_date"] ?></td>
+<<<<<<< Updated upstream
   <td class="text-center py-2 col-span-4"><?php echo $row["orders_id"] ?></td>
+=======
+<<<<<<< HEAD
+  <td class="text-center py-2 col-span-4"><?php echo $row["tracking"] ?></td>
+=======
+  <td class="text-center py-2 col-span-4"><?php echo $row["orders_id"] ?></td>
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
   <td class="text-center py-2"><?php echo $row["order_price"] ?></td>
   <td class="text-center py-2"><?php echo $row["status"] ?></td>
 <?php

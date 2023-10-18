@@ -111,7 +111,16 @@ input.profile:checked~.subpro {
   </label>
 </div>
 
+<<<<<<< Updated upstream
             
+=======
+<<<<<<< HEAD
+            <p class="text-lg my-2">amount</p>
+            <input type="number" value="1" class="w-2/12 h-9 border-2 border-solid border-black rounded-lg text-center text-xl" name="product_amount">
+=======
+            
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
             <p class="text-lg my-2">detail</p>
             <textarea class="p-4 w-full h-20 border-2 border-solid border-black mb-2" cols="30" rows="10" name="product_detail"></textarea>
             <div class="grid grid-cols-5 w-full my-2">

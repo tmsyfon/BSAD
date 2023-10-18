@@ -20,7 +20,15 @@ if (isset($_POST['add_id'])) {
     $add_detail = $row['add_detail'];
     $add_price = $row['add_price'];
     $add_id = $row['add_id'];
+<<<<<<< Updated upstream
     echo 'add_price ='. $add_id;
+=======
+<<<<<<< HEAD
+    // echo 'add_price ='. $add_id;
+=======
+    echo 'add_price ='. $add_id;
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
 }
 
  ?>
@@ -44,6 +52,14 @@ if (isset($_POST['add_id'])) {
 
 
 <body class="flex flex-col justify-center items-center content-center">
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+<?php
+require_once '../menu.php';
+?>
+=======
+>>>>>>> Stashed changes
   <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
     <div class="grid grid-cols-2 w-full">
       <div class="pl-5">
@@ -74,6 +90,10 @@ if (isset($_POST['add_id'])) {
       </div>
     </div>
   </nav>
+<<<<<<< Updated upstream
+=======
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
 
   <div class="container px-52 py-7">
     <div class="grid grid-cols-2" style="margin-top: 3%;">
@@ -88,7 +108,15 @@ if (isset($_POST['add_id'])) {
 
       ?>
       <div class="flex flex-col justify-center items-center content-center">
+<<<<<<< Updated upstream
         <img src="/BSAD/img/<?php echo $images; ?>" alt="" class="cover" style="width:370px; height: 370px;">
+=======
+<<<<<<< HEAD
+        <img src="/img/<?php echo $images; ?>" alt="" class="cover" style="width:370px; height: 370px;">
+=======
+        <img src="/BSAD/img/<?php echo $images; ?>" alt="" class="cover" style="width:370px; height: 370px;">
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
         <?php
       }
       }
@@ -111,7 +139,15 @@ if (isset($_POST['add_id'])) {
 
    ?>
           <a href="#">
+<<<<<<< Updated upstream
             <img src="/BSAD/img/<?php echo $image_link2; ?>" alt="" style="width: 6rem; height: 6rem;">
+=======
+<<<<<<< HEAD
+            <img src="/img/<?php echo $image_link2; ?>" alt="" style="width: 6rem; height: 6rem;">
+=======
+            <img src="/BSAD/img/<?php echo $image_link2; ?>" alt="" style="width: 6rem; height: 6rem;">
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
           </a>
           <?php
 }

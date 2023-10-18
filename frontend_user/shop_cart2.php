@@ -40,7 +40,15 @@ require_once 'connect.php';
   <nav class="w-screen border-solid border-b-2 border-black" style="height: 85px;">
     <div class="grid grid-cols-2 w-full">
       <div class="pl-5">
+<<<<<<< Updated upstream
         <img class="w-32 m-3" src="http://localhost/BSAD/img/logo.png" alt="">
+=======
+<<<<<<< HEAD
+        <img class="w-32 m-3" src="http://localhost/img/logo.png" alt="">
+=======
+        <img class="w-32 m-3" src="http://localhost/BSAD/img/logo.png" alt="">
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
       </div>
       <div class="flex flex-row justify-end items-end content-end pr-10">
         <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
@@ -74,7 +82,15 @@ require_once 'connect.php';
         $img_row = mysqli_fetch_assoc($img_result);
         $img_link = $img_row["img_link"];
         ?>
+<<<<<<< Updated upstream
         <img src="http://localhost/BSAD/img/<?php echo $img_link;?>" class="col-span-1 w-44 h-44 border-2 border-[#000000]" alt="คำอธิบายรูปภาพ">
+=======
+<<<<<<< HEAD
+        <img src="http://localhost/img/<?php echo $img_link;?>" class="col-span-1 w-44 h-44 border-2 border-[#000000]" alt="คำอธิบายรูปภาพ">
+=======
+        <img src="http://localhost/BSAD/img/<?php echo $img_link;?>" class="col-span-1 w-44 h-44 border-2 border-[#000000]" alt="คำอธิบายรูปภาพ">
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
         <div class="col-span-1 p-4">
           <p class="text-xl"><?php echo $cartItem['name'] ?></p>
           <p class="text-xl">SIZE : <?php echo $cartItem['size'] ?></p>

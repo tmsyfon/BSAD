@@ -3,17 +3,42 @@
 <?php
 session_start();
 $user_permission = $_SESSION['permission'];
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+if(isset($_POST['search'])){
+   // ดำเนินการต่อไปกับข้อมูลที่ค้นหาจากฐานข้อมูล
+   $search = $_POST['search'];
+} else {
+  $search = '';
+}
+
+
+// echo 'permission ='.$search;
+require_once 'inc/connect.php';
+
+ ?>
+
+
+
+
+=======
+>>>>>>> Stashed changes
 $search = $_POST['search'];
 echo 'permission ='.$search;
 require_once 'inc/connect.php';
  ?>
+<<<<<<< Updated upstream
+=======
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <!----- framework tailwind ----->
+    <!--- framework tailwind ----->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://kit.fontawesome.com/4a5bb73cc5.css" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/4a5bb73cc5.js" crossorigin="anonymous"></script>
@@ -124,6 +149,11 @@ input.profile:checked~.subpro {
 <?php
 require_once 'menu.php';
 // คำสั่ง SQL query เพื่อดึงข้อมูลจากตาราง products
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> Stashed changes
 if($search != ''){
   $sql = "SELECT * FROM product WHERE add_name LIKE '%$search%'";
   $result = mysqli_query($conn, $sql);
@@ -131,10 +161,15 @@ if($search != ''){
 $sql = "SELECT * FROM product";
 $result = mysqli_query($conn, $sql);
 }
+<<<<<<< Updated upstream
+=======
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
 ?>
     <div class="container py-10 grid grid-cols-8">
 
         <div class="col-span-2">
+            <form method="POST" action="">
             <div class="box-content w-64 p-4 border-solid border-2 border-[#000000] shadow-md ml-10  rounded-xl"
                 style="height: 500px;">
 
@@ -144,6 +179,18 @@ $result = mysqli_query($conn, $sql);
 
                     <div class="submenu hidden flex flex-col">
                         <div>
+<<<<<<< HEAD
+                            <input id="brand1" class="checked:bg-gray-300" type="checkbox" name="era[]" value="1970S">
+                            <label for="brand1">1970'S</label>
+                        </div>
+                        <div>
+                            <input id="brand1" class="checked:bg-gray-300" type="checkbox" name="era[]" value="1980S">
+                            <label for="brand1">1980'S</label>
+                        </div>
+                        <div>
+                            <input id="brand1" class="checked:bg-gray-300" type="checkbox" name="era[]" value="1990S">
+                            <label for="brand1">1990'S</label>
+=======
                             <input id="brand1" class="checked:bg-gray-300" type="checkbox">
                             <label for="brand1">1970S</label>
                         </div>
@@ -154,6 +201,10 @@ $result = mysqli_query($conn, $sql);
                         <div>
                             <input id="brand1" class="checked:bg-gray-300" type="checkbox">
                             <label for="brand1">1990S</label>
+<<<<<<< Updated upstream
+=======
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
                         </div>
                     </div>
                 </div>
@@ -164,9 +215,9 @@ $result = mysqli_query($conn, $sql);
 
                     <div class="submenu hidden flex flex-col">
                         <p> 0 - <output id="value">500</output></p>
-                        <input id="price" type="range" max="9000" value="500" list="markers" oninput="show(this)">
+                        <input id="price" type="range" max="9000" value="500"  oninput="show(this)" name="price">
 
-                        <datalist id="markers">
+                        <!-- <datalist id="markers">
                             <option value="0"></option>
                             <option value="1000"></option>
                             <option value="2000"></option>
@@ -177,7 +228,7 @@ $result = mysqli_query($conn, $sql);
                             <option value="7000"></option>
                             <option value="8000"></option>
                             <option value="9000"></option>
-                        </datalist>
+                        </datalist> -->
 
                         <script>
                             function show(element){
@@ -188,37 +239,48 @@ $result = mysqli_query($conn, $sql);
                         </script>
                     </div>
                 </div>
-
                 <div class="mt-5">
                     <input id="size" type="checkbox" name="menu" class="menu hidden" />
                     <label for="size" class="cursor-pointer"><b>SIZE</b></label>
 
                     <div class="submenu hidden flex flex-col">
                         <div>
-                            <input id="brand1" class="checked:bg-gray-300" type="checkbox">
+                            <input id="brand1" class="checked:bg-gray-300" name="size[]" type="checkbox" value="S">
                             <label for="brand1">S</label>
                         </div>
                         <div>
-                            <input id="brand1" class="checked:bg-gray-300" type="checkbox">
+                            <input id="brand1" class="checked:bg-gray-300" name="size[]" type="checkbox" value="M">
                             <label for="brand1">M</label>
                         </div>
                         <div>
-                            <input id="brand1" class="checked:bg-gray-300" type="checkbox">
+                            <input id="brand1" class="checked:bg-gray-300" name="size[]" type="checkbox" value="L">
                             <label for="brand1">L</label>
                         </div>
                         <div>
-                            <input id="brand1" class="checked:bg-gray-300" type="checkbox">
+                            <input id="brand1" class="checked:bg-gray-300" name="size[]" type="checkbox" value="XL">
                             <label for="brand1">XL</label>
                         </div>
                         <div>
-                            <input id="brand1" class="checked:bg-gray-300" type="checkbox">
+                            <input id="brand1" class="checked:bg-gray-300" name="size[]" type="checkbox" value="XXL">
                             <label for="brand1">XXL</label>
                         </div>
                     </div>
                 </div>
                 <div class="mt-5">
+<<<<<<< Updated upstream
                 <button class="bg-black text-white rounded-xl p-3">search</button>
               </div>
+=======
+<<<<<<< HEAD
+
+              </div>
+              <button class="bg-black text-white rounded-xl p-3" type="submit">search</button>
+                </form>
+=======
+                <button class="bg-black text-white rounded-xl p-3">search</button>
+              </div>
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
             </div>
         </div>
 
@@ -230,10 +292,76 @@ $result = mysqli_query($conn, $sql);
 
             <div class="grid grid-cols-4 mt-6 gap-5">
 <?php
+<<<<<<< Updated upstream
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
         $add_id = $row["add_id"]; // สร้างตัวแปร add_id และกำหนดค่าเป็น add_id ของแถวปัจจุบัน
 
+=======
+<<<<<<< HEAD
+
+if($search != ''){
+  $sql = "SELECT * FROM product WHERE add_name LIKE '%$search%'";
+  $result = mysqli_query($conn, $sql);
+} else if(!isset($_POST['menu']) AND $search == '') {
+$sql = "SELECT * FROM product";
+$result = mysqli_query($conn, $sql);
+} else {
+    // ดึงค่าจาก checkbox และจัดรูปแบบให้อยู่ในรูปของ string เพื่อนำไปใช้ในคำสั่ง SQL
+    $era = implode("', '", $_POST['era']);
+
+    // คำสั่ง SQL เพื่อดึงข้อมูลที่ตรงกับเงื่อนไขของ checkbox
+    $sql = "SELECT * FROM product WHERE add_name LIKE ('%$era%')";
+
+    $result = mysqli_query($conn, $sql);
+    if ($result === false) {
+  echo mysqli_error($conn);
+  exit();
+}
+
+    // นับจำนวนแถวข้อมูลที่ถูกดึงออกมา
+    $count = mysqli_num_rows($result);
+
+    // แสดงผลข้อมูลที่ดึงออกมา
+    if ($count > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+          $add_id = $row["add_id"]; // สร้างตัวแปร add_id และกำหนดค่าเป็น add_id ของแถวปัจจุบัน
+
+          // ดึงข้อมูลภาพจากตาราง images โดยใช้ add_id เป็นคีย์เชื่อมโยง และใช้ LIMIT 1 เพื่อดึงแค่ภาพเดียว
+          $img_query = "SELECT img_link FROM image WHERE add_id = $add_id LIMIT 1";
+          $img_result = mysqli_query($conn, $img_query);
+          $img_row = mysqli_fetch_assoc($img_result);
+          $img_link = $img_row["img_link"];?>
+          <div class="w-full cursor-pointer">
+              <div class="p-3 w-full h-80 border-black border-2 border-solid flex flex-col justify-center items-center content-center">
+
+                  <img class="w-full h-64 mb-3 overflow-hidden" src="img/<?php echo $img_link;?>" alt="">
+
+                  <p class="text-xl font-semibold"><?php echo $row["add_name"]; ?></p>
+                  <p class="text-lg"><?php echo '฿'.$row["add_price"]; ?></p>
+              </div>
+          </div>
+          <?php
+        }
+    } else {
+        echo "No data found.".$era;
+    }
+
+    // ปิดการเชื่อมต่อฐานข้อมูล
+    mysqli_close($conn);
+}
+
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+        $add_id = $row["add_id"]; // สร้างตัวแปร add_id และกำหนดค่าเป็น add_id ของแถวปัจจุบัน
+
+=======
+if (mysqli_num_rows($result) > 0) {
+    while($row = mysqli_fetch_assoc($result)) {
+        $add_id = $row["add_id"]; // สร้างตัวแปร add_id และกำหนดค่าเป็น add_id ของแถวปัจจุบัน
+
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
         // ดึงข้อมูลภาพจากตาราง images โดยใช้ add_id เป็นคีย์เชื่อมโยง และใช้ LIMIT 1 เพื่อดึงแค่ภาพเดียว
         $img_query = "SELECT img_link FROM image WHERE add_id = $add_id LIMIT 1";
         $img_result = mysqli_query($conn, $img_query);

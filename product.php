@@ -19,7 +19,14 @@ if (isset($_GET['id'])) {
     $add_amount = $row['add_amount'];
     $add_detail = $row['add_detail'];
     $add_price = $row['add_price'];
+<<<<<<< Updated upstream
     echo 'add_price ='. $add_price;
+=======
+<<<<<<< HEAD
+=======
+    echo 'add_price ='. $add_price;
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
 }
 
  ?>
@@ -76,7 +83,15 @@ if (isset($_GET['id'])) {
           src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png" alt="">
       </div>
       <div class="flex flex-row justify-end items-end content-end pr-10">
+<<<<<<< Updated upstream
         <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
+=======
+<<<<<<< HEAD
+        <a class="text-2xl m-6 font-semibold" href="shop_list.php">SHOP</a>
+=======
+        <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
         <div class="relative">
           <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search"
             type="text">

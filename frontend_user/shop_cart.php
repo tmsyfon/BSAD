@@ -93,7 +93,15 @@ require_once 'connect.php';
 
           ?>
           <div class="col-span-1 w-44 h-44 border-2 border-black">
+<<<<<<< Updated upstream
             <img src="http://localhost/BSAD/img/<?php echo $img_link;?>" class="col-span-1 w-44 h-44 border-2 border-[#000000]" alt="">
+=======
+<<<<<<< HEAD
+            <img src="http://localhost/img/<?php echo $img_link;?>" class="col-span-1 w-44 h-44 border-2 border-[#000000]" alt="">
+=======
+            <img src="http://localhost/BSAD/img/<?php echo $img_link;?>" class="col-span-1 w-44 h-44 border-2 border-[#000000]" alt="">
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
           </div>
           <div class="col-span-2 pl-8 pt-2">
             <p class="text-xl"><?php echo $cartItem['name'] ?></p>
@@ -104,10 +112,36 @@ require_once 'connect.php';
             </span>
           </div>
           <div class="col-span-2 p-4 grid grid-cols-3 text-center">
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+            <p class="mt-1.5">฿ <?php echo $cartItem['price']; ?></p>
+           <!-- <input class="h-9 border-2 border-black text-center" value="1" type="number"> -->
+           <!-- <p class="mt-1.5">฿ <span class="total-price"></span></p> -->
+</div>
+<!-- JavaScript ของส่วนนี้ -->
+<script>
+  const priceElement = document.querySelector('.mt-1.5:first-child');
+  const quantityElement = document.querySelector('.h-9');
+  const totalElement = document.querySelector('.total-price');
+
+  quantityElement.addEventListener('input', () => {
+    const price = parseFloat(priceElement.textContent.slice(2));
+    const quantity = parseInt(quantityElement.value);
+    const totalPrice = price * quantity;
+    totalElement.textContent = totalPrice.toFixed(2);
+  });
+</script>
+=======
+>>>>>>> Stashed changes
   <p class="mt-1.5">฿ <?php echo $cartItem['price']; ?></p>
   <input class="h-9 border-2 border-black text-center" value="1" type="number" onchange="updateTotalPrice(this)">
   <p class="mt-1.5">฿ <span class="total-price"></span></p>
 </div>
+<<<<<<< Updated upstream
+=======
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
         </div>
       <?php endforeach; ?>
     <?php endif; ?>
@@ -178,6 +212,17 @@ function updateTotalPrice(input) {
     <button class="rounded-none border-2 border-[#000000] w-32 h-10 mt-2 hover:text-white hover:bg-black" >ลบสินค้าทั้งหมด</button>
   </div>
   </form>
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  <!-- <form action="">
+  <div class="col-span-1 flex justify-end content-end items-end">
+    <button class="rounded-none border-2 border-[#000000] w-32 h-10 mt-2 hover:text-white hover:bg-black" type="submit">อัพเดทราคา</button>
+  </div>
+  </form> -->
+=======
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
 </div>
   </div>
 

@@ -24,7 +24,15 @@ $delivery = 50;
                 <img class="w-32 m-3" src="https://cdn.discordapp.com/attachments/1020724048889659442/1097278386927321189/logo.png" alt="">
             </div>
             <div class="flex flex-row justify-end items-end content-end pr-10">
+<<<<<<< Updated upstream
                 <a class="text-2xl m-6 font-semibold" href="">SHOP<?php echo $orders_id; ?></a>
+=======
+<<<<<<< HEAD
+                <a class="text-2xl m-6 font-semibold" href="">SHOP</a>
+=======
+                <a class="text-2xl m-6 font-semibold" href="">SHOP<?php echo $orders_id; ?></a>
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
                 <div class="relative">
                     <input class="p-3 h-12 w-64 border-2 border-solid border-black rounded-3xl m-4" placeholder="search"
                         type="text">
@@ -95,9 +103,21 @@ $delivery = 50;
 
                 ?>
                 <div class="col-span-4 text-center grid grid-cols-7">
+<<<<<<< Updated upstream
                     <div class="col-span-1">
                         <!-- <img class="bg-gray-200 w-20 h-20" src="http://localhost/BSAD/img/<?php echo $img_link;?>" alt=""> -->
                     </div>
+=======
+<<<<<<< HEAD
+                    <!-- <div class="col-span-1">
+                        <img class="bg-gray-200 w-20 h-20" src="http://localhost/img/<?php echo $img_link;?>" alt="">
+                    </div> -->
+=======
+                    <div class="col-span-1">
+                        <!-- <img class="bg-gray-200 w-20 h-20" src="http://localhost/BSAD/img/<?php echo $img_link;?>" alt=""> -->
+                    </div>
+>>>>>>> ca6638568164aa6a90f0feab29be06d41e11f90a
+>>>>>>> Stashed changes
                     <div class="col-span-6 text-start">
                         <p><?php echo $row1['add_name']; ?></p>
                         <p class="text-gray-400">Size : <?php echo $row1['add_size']; ?> </p>
